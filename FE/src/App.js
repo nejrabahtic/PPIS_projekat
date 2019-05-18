@@ -3,8 +3,10 @@ import Sidemenu from './components/Sidemenu';
 import Overview from './components/Overview';
 
 import { BrowserRouter, Route } from 'react-router-dom'
-import './App.css';
 import 'semantic-ui-css/semantic.min.css'
+
+import './App.css';
+import './styles/Color.css';
 
 const routes = [
   {
@@ -21,8 +23,8 @@ class App extends Component {
     return (
       <div className="App">
         <BrowserRouter>
-        <div className="page-wrapper" >
-          <div className="sidemenu-wrapper" >
+        <div className="page-wrapper empthy-color-bg" >
+          <div className="sidemenu-wrapper secondary-color-bg" >
             <Sidemenu />
           </div>
           <div className="content-wrapper" >

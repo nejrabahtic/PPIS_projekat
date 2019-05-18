@@ -1,0 +1,41 @@
+
+/* primary color: #2C3531 */
+/* secondary color: #116466 */
+/* accent color: #D9B08C */
+/* secondary accent color: #FFC89A */
+/* white color: #D1E8E2 */
+
+.primary-color{
+    color: #2C3531;
+}
+.primary-color-bg{
+    background-color: #2C3531;
+}
+
+.secondary-color{
+    color: #116466;
+}
+.secondary-color-bg{
+    background-color: #116466;
+}
+
+.accent-color{
+    color: #D9B08C;
+}
+.accent-color-bg{
+    background-color: #D9B08C;
+}
+
+.second-accent-color{
+    color: #FFC89A;
+}
+.second-accent-color-bg{
+    background-color: #FFC89A;
+}
+
+.empthy-color{
+    color: #D1E8E2;
+}
+.empthy-color-bg{
+    background-color: #D1E8E2;
+}
