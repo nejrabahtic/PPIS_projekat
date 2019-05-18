@@ -4,6 +4,7 @@ import Overview from './components/Overview';
 
 import { BrowserRouter, Route } from 'react-router-dom'
 import './App.css';
+import 'semantic-ui-css/semantic.min.css'
 
 const routes = [
   {

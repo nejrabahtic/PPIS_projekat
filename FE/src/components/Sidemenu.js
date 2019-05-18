@@ -4,7 +4,7 @@ export default class Sidemenu extends Component {
     
     render(){
         return (
-            <div> Sidemenu</div>
+            <div> Sidemenu </div>
         )
     }
 }

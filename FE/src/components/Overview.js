@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import '../styles/Overview.css';
 
+import { Button } from 'semantic-ui-react';
 
 export default class Overview extends Component {
 
@@ -8,6 +9,7 @@ export default class Overview extends Component {
      return (
         <div>
             Overview
+            <Button>Test</Button>
         </div>
      );   
     }
