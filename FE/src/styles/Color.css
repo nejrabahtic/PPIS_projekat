@@ -6,36 +6,36 @@
 /* white color: #D1E8E2 */
 
 .primary-color{
-    color: #2C3531;
+    color: #2C3531 !important;
 }
 .primary-color-bg{
-    background-color: #2C3531;
+    background-color: #2C3531 !important;
 }
 
 .secondary-color{
-    color: #116466;
+    color: #116466 !important;
 }
 .secondary-color-bg{
-    background-color: #116466;
+    background-color: #116466 !important;
 }
 
 .accent-color{
-    color: #D9B08C;
+    color: #D9B08C !important;
 }
 .accent-color-bg{
-    background-color: #D9B08C;
+    background-color: #D9B08C !important;
 }
 
 .second-accent-color{
-    color: #FFC89A;
+    color: #FFC89A !important;
 }
 .second-accent-color-bg{
-    background-color: #FFC89A;
+    background-color: #FFC89A !important;
 }
 
-.empthy-color{
-    color: #D1E8E2;
+.empty-color{
+    color: #D1E8E2 !important;
 }
-.empthy-color-bg{
-    background-color: #D1E8E2;
+.empty-color-bg{
+    background-color: #D1E8E2 !important;
 }
