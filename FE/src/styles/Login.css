@@ -1,3 +1,9 @@
 .login-form-wrapper{
     padding: 50px; 
 }
+.login-page-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}

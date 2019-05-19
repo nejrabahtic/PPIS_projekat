@@ -7,6 +7,13 @@ import Login from './components/Login';
 import Overview from './components/Overview';
 import Home from './components/Home';
 import Analytics from './components/Analytics';
+import Report from './components/Report';
+
+const Authorized = ( component ) => {
+  if(!Auth.isIdSet())
+    return <Redirect to={{pathname: "/login"}} />;
+  return component;
+}
 
 const routes = [
     {
@@ -17,32 +24,24 @@ const routes = [
     {
       path: '/',
       exact: true,
-      component: (props) => {
-        if(!Auth.isIdSet())
-          return <Redirect to={{pathname: "/login"}} />;
-  
-        return <Home {...props} />
-      }
+      component: (props) => Authorized(<Home {...props} />)
+      
     },
     {
       path: '/overview',
       exact: true,
-      component: (props) => {
-        if(!Auth.isIdSet())
-          return <Redirect to={{pathname: "/login"}} />;
-
-        return <Overview {...props} />
-      }
+      component: (props) => Authorized(<Overview {...props} />)
     },  
     {
       path: '/analytics',
       exact: true,
-      component:(props) => {
-        if(!Auth.isIdSet())
-          return <Redirect to={{pathname: "/login"}} />;
+      component:(props) => Authorized(<Analytics {...props} />)
 
-        return  <Analytics {...props} />
-      }
+    },
+    {
+      path: '/report',
+      exact: true,
+      component:(props) => Authorized(<Report {...props} />)
     }
   ];
 

@@ -29,7 +29,7 @@ export default class Login extends Component{
     } 
     render(){
         return (
-            <div>
+            <div className="login-page-wrapper">
                 <Container className="login-form-wrapper secondary-color-bg">
                     <Header size="huge" className="accent-color">Login</Header>
                     <Form>

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Sidemenu from './components/Sidemenu';
 
-import { BrowserRouter, Route } from 'react-router-dom'
+import { BrowserRouter, Route, Redirect } from 'react-router-dom'
 import routes from './routes';
 import { Sidebar } from 'semantic-ui-react'; 
 import Auth from './services/Auth';
@@ -41,7 +41,7 @@ class App extends Component {
               <Sidemenu />
             </div>
           </Sidebar>
-          <Sidebar.Pusher>
+          <Sidebar.Pusher className="sidebar-pusher">
             <div className="content-wrapper" >
               {routes.map( 
                 (route, index) => 
@@ -52,6 +52,7 @@ class App extends Component {
                     render={(props) => route.component({ ...props })}
                   />
               )}
+              
             </div>
           </Sidebar.Pusher>
           </div>
