@@ -1,50 +1,59 @@
 import React, { Component } from 'react';
 import Sidemenu from './components/Sidemenu';
 
-import Overview from './components/Overview';
-import Home from './components/Home';
-
 import { BrowserRouter, Route } from 'react-router-dom'
-import 'semantic-ui-css/semantic.min.css'
+import routes from './routes';
+import { Sidebar } from 'semantic-ui-react'; 
+import Auth from './services/Auth';
 
+import 'semantic-ui-css/semantic.min.css'
 import './App.css';
 import './styles/Color.css';
 
-const routes = [
-  {
-    path: '/',
-    exact: true,
-    component: Home
-  },
-  {
-    path: '/overview',
-    exact: true,
-    component: Overview
-  }
-]
-
-
-
 class App extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      visible: Auth.isIdSet()
+    }
+  }
+  componentDidMount(){
+    Auth.subscribeToUpdate(
+      () => { 
+        this.setState({
+          visible: Auth.isIdSet()
+        })
+      }
+    )
+  }
+
   render(){
+    const { visible } = this.state;
     return (
       <div className="App">
         <BrowserRouter>
         <div className="page-wrapper empty-color-bg" >
-          <div className="sidemenu-wrapper secondary-color-bg" >
-            <Sidemenu />
-          </div>
-          <div className="content-wrapper" >
-            {routes.map( 
-              (route, index) => 
-                <Route 
-                  key={index}  
-                  path={route.path}
-                  exact={route.exact}
-                  component={route.component}
-                />
-            )}
-          </div>
+          <Sidebar
+              visible={visible}
+              animation="push"
+            >
+            <div className="sidemenu-wrapper secondary-color-bg" >
+              <Sidemenu />
+            </div>
+          </Sidebar>
+          <Sidebar.Pusher>
+            <div className="content-wrapper" >
+              {routes.map( 
+                (route, index) => 
+                  <Route 
+                    key={index}  
+                    path={route.path}
+                    exact={route.exact}
+                    render={(props) => route.component({ ...props })}
+                  />
+              )}
+            </div>
+          </Sidebar.Pusher>
           </div>
         </BrowserRouter>
       </div>

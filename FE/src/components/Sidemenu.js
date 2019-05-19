@@ -21,6 +21,14 @@ export default class Sidemenu extends Component {
                         <Icon className="empty-color" name="book" />
                         <List.Content className="empty-color" > Overview </List.Content>
                     </List.Item>
+                    <List.Item as={ Link } to="/analytics">
+                        <Icon className="empty-color" name="chart line" />
+                        <List.Content className="empty-color" > Analytics </List.Content>
+                    </List.Item>
+                    <List.Item as={ Link } to="/login">
+                        <Icon className="empty-color" name="log out" />
+                        <List.Content className="empty-color" > Log out </List.Content>
+                    </List.Item>
                 </List>
 
             </div>

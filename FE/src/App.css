@@ -5,14 +5,12 @@ html, body {
 }
 .page-wrapper{
   display: flex;
-  align-items: stretch;
   height: 100vh;
+  align-items: center;
+  justify-content: center;
 }
-
 .sidemenu-wrapper{
   height: 100%;
-  width: 24em;
-
 }
 .content-wrapper{
   height: 100%;
