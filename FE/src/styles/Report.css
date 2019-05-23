@@ -1,0 +1,17 @@
+.report-page{
+    padding: 50px;
+}
+
+.report-buttons{
+    padding: 30px;
+}
+.report-form{
+    width: 60%;
+    padding: 30px;
+}
+.description{
+    resize: none;
+}
+.sumbit-button{
+    margin-top: 17px;
+}
