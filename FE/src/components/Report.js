@@ -47,15 +47,21 @@ export default class Report extends Component {
                 </Button.Group>
                 <Form className="report-form secondary-color-bg">
                     <Header className="accent-color">Request/Incident</Header>
-                        <Form.Field>
+                        <Form.Field required={true}>
                             <label className="empty-color">Title:</label>
                             <input></input>
                         </Form.Field>
-                        <Form.Field>
+                        <Form.Field required={true}>
+                            <label className="empty-color">Categorty</label>
+                            <Form.Select options={[{text:"Editing"}, {text:"Marketing"}, {text:"Distribution"}, {text:"Printing"}]}>
+
+                            </Form.Select>
+                        </Form.Field>
+                        <Form.Field required={true}>
                             <label className="empty-color">Description:</label>
                             <textarea className="description" rows="10" ></textarea>
                         </Form.Field>
-                        <Form.Field>
+                        <Form.Field required={true}>
                             <label className="empty-color">Type:</label>
                             <Form.Radio
                                 label='Request'
@@ -78,6 +84,7 @@ export default class Report extends Component {
                                 onChange={this.handleTypeChange}
                             />
                         </Form.Field>
+
                     <Button type="sumbit"className="sumbit-button">Submit</Button>
                 </Form>
 
