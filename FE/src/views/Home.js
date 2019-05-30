@@ -36,11 +36,11 @@ export default class Home extends Component {
                     content={username}
                     subheader={role}
                 />
-                <RequestItem 
+                {/* <RequestItem 
                     title="New request"
                     created="08/05/2019"
                     description="Cute dogs come in a variety of shapes and sizes. Some cute dogs are cute for their adorable faces, others for their tiny stature, and even others for their massive size."
-                />
+                /> */}
                 <ReportButton />
             </div>
         )
