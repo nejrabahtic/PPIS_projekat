@@ -6,7 +6,10 @@ html, body {
 .page-wrapper{
   display: flex;
   height: 100vh;
-  justify-content: stretch;
+}
+.sidebar-fix{
+  padding-right: 260px;
+
 }
 .sidebar-pusher{
   width: 100%;

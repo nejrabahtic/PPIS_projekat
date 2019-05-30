@@ -3,11 +3,11 @@ import { Redirect } from 'react-router-dom';
 
 import Auth from '../src/services/Auth';
 
-import Login from './components/Login';
-import Overview from './components/Overview';
-import Home from './components/Home';
-import Analytics from './components/Analytics';
-import Report from './components/Report';
+import Login from './views/Login';
+import Overview from './views/Overview';
+import Home from './views/Home';
+import Analytics from './views/Analytics';
+import Report from './views/Report';
 
 const Authorized = ( component ) => {
   if(!Auth.isIdSet())
@@ -37,6 +37,11 @@ const routes = [
       exact: true,
       component:(props) => Authorized(<Analytics {...props} />)
 
+    },
+    {
+      path: "/incident",
+      exact: false,
+      component: (props) => Authorized()
     },
     {
       path: '/report',

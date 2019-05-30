@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Sidemenu from './components/Sidemenu';
 
-import { BrowserRouter, Route, Redirect } from 'react-router-dom'
+import { BrowserRouter, Route } from 'react-router-dom'
 import routes from './routes';
 import { Sidebar } from 'semantic-ui-react'; 
 import Auth from './services/Auth';
@@ -32,7 +32,7 @@ class App extends Component {
     return (
       <div className="App">
         <BrowserRouter>
-        <div className="page-wrapper empty-color-bg" >
+        <div className={"page-wrapper empty-color-bg " + (visible? "sidebar-fix" :"")} >
           <Sidebar
               visible={visible}
               animation="push"

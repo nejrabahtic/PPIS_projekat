@@ -7,24 +7,19 @@ import { Button } from 'semantic-ui-react';
 function ShowRequests(props) {
   return (
     <div className={props.warn ? "showa": "hidea"}>
-
-
-
-
-        <div class="ui three cards">
-
-      <a class="red card">
-        <div class="content">
-          <div class="header">New request</div>
-          <div class="meta">08/05/2019</div>
-          <div class="description">
-            <p>Cute dogs come in a variety of shapes and sizes. Some cute dogs are cute for their adorable faces, others for their tiny stature, and even others for their massive size.</p>
+      <div class="ui three cards">
+        <a class="red card">
+          <div class="content">
+            <div class="header">New request</div>
+            <div class="meta">08/05/2019</div>
+            <div class="description">
+              <p>Cute dogs come in a variety of shapes and sizes. Some cute dogs are cute for their adorable faces, others for their tiny stature, and even others for their massive size.</p>
+            </div>
           </div>
-        </div>
-        <div class="extra content">
-          IT department
-        </div>
-      </a>
+          <div class="extra content">
+            IT department
+          </div>
+        </a>
 
       <a class="red card">
         <div class="content">

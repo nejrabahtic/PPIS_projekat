@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { List, Icon, Image } from 'semantic-ui-react';
-import { Link, withRouter } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 
 import '../styles/Sidemenu.css';
