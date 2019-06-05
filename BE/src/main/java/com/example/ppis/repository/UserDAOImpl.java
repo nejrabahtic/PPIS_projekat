@@ -19,7 +19,7 @@ public class UserDAOImpl {
            user.setUsername("test");
            user.setPassword("test");
            Role r = new Role();
-           r.setName("ROLE_USER");
+           r.setType("ROLE_USER");
            List<Role> roles = new ArrayList<Role>();
            roles.add(r);
            user.setAuthorities(roles);

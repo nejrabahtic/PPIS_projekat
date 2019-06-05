@@ -2,28 +2,37 @@ package com.example.ppis.model;
 
 import java.util.List;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 import org.springframework.security.core.GrantedAuthority;
 
+@Entity
+@Table(name = "role")
 public class Role implements GrantedAuthority{
-   
-    private String name;
+
+    @Column
+    private String type;
+
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
- 
-    public String getName() {
-        return name;
+
+    public Role() {
     }
- 
-    public void setName(String name) {
-        this.name = name;
+
+    public Role(String type) {
+        this.type = type;
     }
- 
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
     public String getAuthority() {
-        return this.name;
+        return this.type;
     }
 }
