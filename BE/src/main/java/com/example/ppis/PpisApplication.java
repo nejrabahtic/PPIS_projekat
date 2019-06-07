@@ -9,7 +9,7 @@ import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
 @EnableAutoConfiguration(exclude={DataSourceAutoConfiguration.class,HibernateJpaAutoConfiguration.class})
-@ComponentScan( "com.example.ppis.service")
+@ComponentScan( "com.example.ppis.services")
 public class PpisApplication {
 
 	public static void main(String[] args) {

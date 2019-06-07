@@ -1,4 +1,4 @@
-package com.example.ppis.service;
+package com.example.ppis.services;
 
 import java.util.Collection;
 import java.util.stream.Collectors;
