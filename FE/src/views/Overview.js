@@ -7,93 +7,40 @@ import { Button } from 'semantic-ui-react';
 function ShowRequests(props) {
   return (
     <div className={props.warn ? "showa": "hidea"}>
-      <div class="ui three cards">
-        <a class="red card">
-          <div class="content">
-            <div class="header">New request</div>
-            <div class="meta">08/05/2019</div>
-            <div class="description">
-              <p>Cute dogs come in a variety of shapes and sizes. Some cute dogs are cute for their adorable faces, others for their tiny stature, and even others for their massive size.</p>
-            </div>
-          </div>
-          <div class="extra content">
-            IT department
-          </div>
-        </a>
+    <div class="ui three cards" >
 
-      <a class="red card">
-        <div class="content">
-          <div class="header">New request</div>
-          <div class="meta">08/05/2019</div>
-          <div class="description">
-            <p>Cute dogs come in a variety of shapes and sizes. Some cute dogs are cute for their adorable faces, others for their tiny stature, and even others for their massive size.</p>
-          </div>
+        {
+          props.requests.map( (item, index) => (
+            <a className={(() => {
+        switch (item.priority) {
+        case 'high':   return 'red card';
+        case "medium": return 'yellow card';
+        default:      return 'green card';
+      }
+            })()} key={index}>
+
+
+            <p class="statuss">Status: {item.status}</p>
+              <div class="content">
+              <div class="meta">
+              <span class="right floated time">{item.date}</span>
+                              </div>
+                <div class="header">{item.title}</div><br></br>
+                <div class="meta">
+                  <span class="category">Urgency: {item.urgency}</span>
+                  </div>
+                <div class="description">
+                  <p>{item.short_text}</p>
+                </div>
+              </div>
+              <div class="extra content">
+                {item.department}
+                              <span class="right floated time">Priority:{item.priority}</span>
+              </div>
+            </a>
+          ))
+        }
         </div>
-        <div class="extra content">
-          IT department
-        </div>
-      </a>
-
-
-      <a class="red card">
-        <div class="content">
-          <div class="header">New request</div>
-          <div class="meta">08/05/2019</div>
-          <div class="description">
-            <p>Cute dogs come in a variety of shapes and sizes. Some cute dogs are cute for their adorable faces, others for their tiny stature, and even others for their massive size.</p>
-          </div>
-        </div>
-        <div class="extra content">
-          IT department
-        </div>
-      </a>
-
-      <a class="red card">
-        <div class="content">
-          <div class="header">New request</div>
-          <div class="meta">08/05/2019</div>
-          <div class="description">
-            <p>Cute dogs come in a variety of shapes and sizes. Some cute dogs are cute for their adorable faces, others for their tiny stature, and even others for their massive size.</p>
-          </div>
-        </div>
-        <div class="extra content">
-          IT department
-        </div>
-      </a>
-
-
-      <a class="red card">
-        <div class="content">
-          <div class="header">New request</div>
-          <div class="meta">08/05/2019</div>
-          <div class="description">
-            <p>Cute dogs come in a variety of shapes and sizes. Some cute dogs are cute for their adorable faces, others for their tiny stature, and even others for their massive size.</p>
-          </div>
-        </div>
-        <div class="extra content">
-          IT department
-        </div>
-      </a>
-
-
-
-    </div>
-
-
-    <div class="ui teal card">
-      <div class="content">
-        <div class="header">New request</div>
-        <div class="meta">08/05/2019</div>
-        <div class="description">
-          <p>Cute dogs come in a variety of shapes and sizes. Some cute dogs are cute for their adorable faces, others for their tiny stature, and even others for their massive size.</p>
-        </div>
-      </div>
-      <div class="extra content">
-        IT department
-      </div>
-    </div>
-
-
     </div>
   );
 }
@@ -245,7 +192,40 @@ export default class Overview extends Component {
             ShowRequest:true,
             ShowIncident: false,
             currentTab: "active item",
-            inactiveTab: "item"
+            inactiveTab: "item",
+            requests:  [{
+              'title': 'PRvi request',
+              'date': '02/09/2019',
+              'short_text': 'NEki tekst koji je kraci ya prvi request tekst koji je kraci jhzhzub tekst koji je kraci jhzhzub tekst koji je kraci jhzhzub',
+              'department': 'IT department',
+              'priority': 'high',
+              'urgency':'high',
+              'status':'created',
+            },{
+              'title': 'Drugi incident',
+              'date': '03/09/2019',
+              'short_text': 'NEki tekst koji ,je kraci ya drugi request jhzhzub tekst koji je kraci jhzhzub tekst koji je kraci jhzhzub tekst koji je kraci jhzhzub',
+              'department': 'IT department',
+              'priority': 'medium',
+              'urgency':'high',
+              'status':'pending',
+            },{
+              'title': 'PRvi incident',
+              'date': '06/09/2019',
+              'short_text': 'NEki tekst koji je kraci ya treci requestjhzhzub tekst koji je kraci jhzhzub tekst koji je kraci jhzhzub tekst koji je kraci jhzhzub',
+              'department': 'IT department',
+              'priority': 'low',
+              'urgency':'medium',
+              'status':'created',
+            },{
+              'title': 'PRvi incident',
+              'date': '06/09/2019',
+              'short_text': 'NEki tekst koji je kraci jhzhzub tekst koji je kraci jhzhzub tekst koji je kraci jhzhzub tekst koji je kraci jhzhzub',
+              'department': 'IT department',
+              'priority': 'high',
+              'urgency':'high',
+              'status':'created',
+            }]
         }
     }
 
@@ -273,7 +253,7 @@ export default class Overview extends Component {
         <div class="ui huge header">Overview</div>
 
         <div class="ui pointing secondary menu"><a  onClick={this.chageTab} className={this.state.currentTab}> Requests</a><a onClick={this.chageTab} className={this.state.inactiveTab}>Incidents</a></div>
-        <ShowRequests warn={this.state.ShowRequest} />
+        <ShowRequests warn={this.state.ShowRequest} requests={this.state.requests}/>
         <ShowIncidents warn={this.state.ShowIncident} />
 
 
