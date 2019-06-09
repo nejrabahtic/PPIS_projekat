@@ -35,7 +35,7 @@ public class IncidentController {
     @PostMapping(consumes = {"application/json"})
     private ResponseEntity<Incident> createIncident(@RequestBody Incident incident){
         return new ResponseEntity<>(incidentService.createIncident(incident.getTitle(), incident.getDescription(),
-                incident.getCreated(), incident.getClosed_time(), incident.getFixed_time()), HttpStatus.CREATED);
+                incident.getCategory()), HttpStatus.CREATED);
     }
 
     @CrossOrigin

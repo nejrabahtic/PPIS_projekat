@@ -24,16 +24,17 @@ public class Incident {
     private String description;
 
     @Column
-    @NotEmpty
     private Date created;
 
     @Column
-    @NotEmpty
     private Date closed_time;
 
     @Column
-    @NotEmpty
     private Date fixed_time;
+
+    @Column
+    @NotEmpty
+    private String category;
 
     @ManyToOne
     @JoinColumn
@@ -82,13 +83,11 @@ public class Incident {
     public Incident() {
     }
 
-    public Incident(@NotEmpty String title, @NotEmpty String description, @NotEmpty Date created,
-                    @NotEmpty Date closed_time, @NotEmpty Date fixed_time) {
+    public Incident(@NotEmpty String title, @NotEmpty String description, @NotEmpty String category) {
         this.title = title;
         this.description = description;
-        this.created = created;
-        this.closed_time = closed_time;
-        this.fixed_time = fixed_time;
+        this.created = new Date();
+        this.category = category;
     }
 
     public String getTitle() {
@@ -129,6 +128,14 @@ public class Incident {
 
     public void setFixed_time(Date fixed_time) {
         this.fixed_time = fixed_time;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
     }
 
     @JsonProperty
