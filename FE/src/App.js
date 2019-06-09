@@ -19,9 +19,10 @@ class App extends Component {
   }
   componentDidMount(){
     Auth.subscribeToUpdate(
+      "Sidebar",
       () => { 
         this.setState({
-          visible: Auth.isIdSet()
+          visible: Auth.isLoggedIn()
         })
       }
     )

@@ -3,6 +3,7 @@ package com.example.ppis.services;
 import com.example.ppis.model.Incident;
 import com.example.ppis.repository.IncidentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -11,6 +12,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
+@ComponentScan(basePackages = { "com.example.ppis.repository" })
 public class IncidentService {
     @Autowired
     private IncidentRepository incidentRepository;

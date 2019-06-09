@@ -5,11 +5,15 @@ import { Link } from 'react-router-dom'
 
 import '../styles/Sidemenu.css';
 import '../styles/Color.css';
+import { withRouter } from 'react-router-dom';  
+import Auth from '../services/Auth';
 
 
-
-export default class Sidemenu extends Component {
-    
+class Sidemenu extends Component {
+    logout = () => {
+        Auth.clear();
+        this.props.history.push("/login");
+    }
 
     render(){
         return (
@@ -28,7 +32,7 @@ export default class Sidemenu extends Component {
                         <Icon className="empty-color" name="chart line" />
                         <List.Content className="empty-color" > Analytics </List.Content>
                     </List.Item>
-                    <List.Item as={ Link } to="/login">
+                    <List.Item  className="logout" onClick={this.logout}>
                         <Icon className="empty-color" name="log out" />
                         <List.Content className="empty-color" > Log out </List.Content>
                     </List.Item>
@@ -38,3 +42,4 @@ export default class Sidemenu extends Component {
         )
     }
 }
+export default withRouter(Sidemenu);

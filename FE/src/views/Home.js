@@ -2,32 +2,31 @@ import React, { Component } from 'react';
 
 import { Header, Button } from 'semantic-ui-react';
 
-import RequestItem from "../components/RequestItem";
 
 import { withRouter } from 'react-router-dom';
 import "../styles/Color.css";
 import "../styles/Home.css";
-
-const ReportButton = withRouter(({history}) => 
-    <Button onClick={() => {
-        history.push('/report')
-    }}>Report a problem</Button> 
-)
+import Auth from '../services/Auth';
 
 
-export default class Home extends Component {
+class Home extends Component {
 
     constructor(props){
         super(props);
         this.state = {
-            username: "Muhamed Delalic",
-            role: "Developer"
+            username: "",
+            role: ""
         };
     }
-    
+    componentDidMount(){
+        this.setState({
+            username: Auth.getUsername(),
+            role: Auth.getRole()
+        })
+    }
     render(){
         const { username, role } = this.state;
-
+        const { history } = this.props;
         return(
             <div>
                 <Header size='huge'>Welcome!</Header>
@@ -41,8 +40,12 @@ export default class Home extends Component {
                     created="08/05/2019"
                     description="Cute dogs come in a variety of shapes and sizes. Some cute dogs are cute for their adorable faces, others for their tiny stature, and even others for their massive size."
                 /> */}
-                <ReportButton />
+                <Button onClick={() => {
+                    history.push('/report')
+                }}>Report a problem</Button> 
             </div>
         )
     }
 }
+
+export default withRouter(Home);

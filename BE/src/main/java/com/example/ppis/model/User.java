@@ -15,17 +15,19 @@ import com.example.ppis.model.Role;
 
 @Entity
 @Table(name = "user")
-public class User implements UserDetails {
+public class User {
 
 	 /* Spring Security related fields*/
-	private Collection<Role> authorities;
-    private boolean accountNonExpired = true;
-    private boolean accountNonLocked = true;
-    private boolean credentialsNonExpired = true;
-    private boolean enabled = true;
-    
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@JoinTable(
+            name = "users_roles",
+            joinColumns = @JoinColumn(
+                    name = "user_id", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(
+                    name = "role_id", referencedColumnName = "id"))
+    private Collection<Role> roles;
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     @Column
@@ -71,7 +73,7 @@ public class User implements UserDetails {
 
     public User(@NotEmpty String username, @NotEmpty String password, @NotEmpty @Email String email,
                 @NotEmpty String firstName, @NotEmpty String lastName, @NotEmpty String phone,
-                @NotEmpty String address) {
+                @NotEmpty String address, Collection<Role> roles) {
         this.username = username;
         this.password = password;
         this.email = email;
@@ -79,6 +81,7 @@ public class User implements UserDetails {
         this.lastName = lastName;
         this.phone = phone;
         this.address = address;
+        this.roles = roles;
     }
 
     public String getUsername() {
@@ -111,37 +114,12 @@ public class User implements UserDetails {
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
-    public Collection<Role> getAuthorities() {
-        return authorities;
+    public Collection<Role> getRoles() {
+        return roles;
     }
-    public void setAuthorities(Collection<Role> authorities) {
-        this.authorities = authorities;
+    public void setRoles(Collection<Role> roles) {
+        this.roles = roles;
     }
-    public boolean isAccountNonExpired() {
-        return accountNonExpired;
-    }
-    public void setAccountNonExpired(boolean accountNonExpired) {
-        this.accountNonExpired = accountNonExpired;
-    }
-    public boolean isAccountNonLocked() {
-        return accountNonLocked;
-    }
-    public void setAccountNonLocked(boolean accountNonLocked) {
-        this.accountNonLocked = accountNonLocked;
-    }
-    public boolean isCredentialsNonExpired() {
-        return credentialsNonExpired;
-    }
-    public void setCredentialsNonExpired(boolean credentialsNonExpired) {
-        this.credentialsNonExpired = credentialsNonExpired;
-    }
-    public boolean isEnabled() {
-        return enabled;
-    }
-    public void setEnabled(boolean enabled) {
-        this.enabled = enabled;
-    }
-
     public String getPhone() {
         return phone;
     }

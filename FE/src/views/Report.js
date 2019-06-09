@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Button, Checkbox, Form, Header } from 'semantic-ui-react'
-
+import { Button, Form, Header } from 'semantic-ui-react'
+import Auth from '../services/Auth';
 import "../styles/Report.css";
 import "../styles/Color.css"
 let userTypes = {
@@ -19,7 +19,18 @@ export default class Report extends Component {
             type: null
         }
     }
-
+    componentDidMount(){
+        switch(Auth.getRole()){
+            case "administrator":
+                this.setState({activeView: userTypes.ADMINISTRATOR});
+                break;
+            case "developer":
+                this.setState({activeView: userTypes.DEVELOPER});
+                break;
+            default:
+                this.setState({activeView: userTypes.USER});
+        }
+    }
     handleTypeChange = (event, data) => {
         this.setState({type: data.value});
     }
@@ -27,24 +38,6 @@ export default class Report extends Component {
         const { activeView, type } = this.state;
         return (
             <div className="report-page"> 
-                <Button.Group className="report-buttons">
-                    <Button 
-                        onClick={() => this.setState({activeView: userTypes.USER })} 
-                        active={activeView === userTypes.USER}>
-                        User
-                    </Button>
-                    <Button 
-                        onClick={() => this.setState({activeView: userTypes.DEVELOPER })}
-                        active={activeView === userTypes.DEVELOPER}>
-                        Developer
-                    </Button>
-                    <Button 
-                        onClick={() => this.setState({activeView: userTypes.ADMINISTRATOR })}
-                        active={activeView === userTypes.ADMINISTRATOR}
-                        >
-                        Administrator
-                    </Button>
-                </Button.Group>
                 <Form className="report-form secondary-color-bg">
                     <Header className="accent-color">Request/Incident</Header>
                         <Form.Field required={true}>
