@@ -6,7 +6,6 @@
     padding: 30px;
 }
 .report-form{
-    width: 60%;
     padding: 30px;
 }
 .description{
@@ -14,4 +13,7 @@
 }
 .sumbit-button{
     margin-top: 17px;
+}
+textarea{
+    resize: none !important;
 }
