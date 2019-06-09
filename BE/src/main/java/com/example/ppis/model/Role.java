@@ -8,31 +8,58 @@ import org.springframework.security.core.GrantedAuthority;
 
 @Entity
 @Table(name = "role")
-public class Role implements GrantedAuthority{
+public class Role{
+	 @Id
+	    @GeneratedValue(strategy = GenerationType.AUTO)
+	    private Long id;
+	    private String name;
 
-    @Column
-    private String type;
+	    public Role() {
+	    }
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+	    public Role(String name) {
+	        this.name = name;
+	    }
 
-    public Role() {
-    }
+	    public Long getId() {
+	        return id;
+	    }
 
-    public Role(String type) {
-        this.type = type;
-    }
+	    public void setId(Long id) {
+	        this.id = id;
+	    }
 
-    public String getType() {
-        return type;
-    }
+	    public String getName() {
+	        return name;
+	    }
 
-    public void setType(String type) {
-        this.type = type;
-    }
+	    public void setName(String name) {
+	        this.name = name;
+	    }
 
-    public String getAuthority() {
-        return this.type;
-    }
+//    @Column
+//    private String type;
+//
+//    @Id
+//    @GeneratedValue(strategy = GenerationType.AUTO)
+//    private Long id;
+//
+//    public Role() {
+//    }
+//
+//    public Role(String type) {
+//        this.type = type;
+//    }
+//
+//    public String getType() {
+//        return type;
+//    }
+//
+//    public void setType(String type) {
+//        this.type = type;
+//    }
+//
+//    public String getAuthority() {
+//        return this.type;
+//    }
 }

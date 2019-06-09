@@ -27,8 +27,8 @@ public class RequestService {
         return optionalRequest.orElse(null);
     }
 
-    public Request createRequest(String title, String description, Date created){
-        Request request = new Request(title, description, created);
+    public Request createRequest(String title, String description, String category){
+        Request request = new Request(title, description, category);
         return requestRepository.save(request);
     }
 

@@ -18,13 +18,13 @@ public class RequestController {
     @Autowired
     private RequestService requestService;
 
-    @CrossOrigin
+    @CrossOrigin(origins = "*")
     @GetMapping()
     private ResponseEntity<List<Request>> getAllRequests(){
         return new ResponseEntity<>(requestService.getAllRequests(), HttpStatus.OK);
     }
 
-    @CrossOrigin
+    @CrossOrigin(origins = "*")
     @GetMapping(path="/{id}")
     private ResponseEntity<Request> getRequestById(@PathVariable Integer id){
         Request request = requestService.getRequestById(id);
@@ -34,14 +34,14 @@ public class RequestController {
         return new ResponseEntity<>(request, HttpStatus.OK);
     }
 
-    @CrossOrigin
+    @CrossOrigin(origins = "*")
     @PostMapping(consumes = {"application/json"})
     private ResponseEntity<Request> createRequest(@RequestBody Request request){
         return new ResponseEntity<>(requestService.createRequest(request.getTitle(), request.getDescription(),
-                request.getCreated()), HttpStatus.CREATED);
+                request.getCategory()), HttpStatus.CREATED);
     }
 
-    @CrossOrigin
+    @CrossOrigin(origins = "*")
     @DeleteMapping(path="{id}")
     private ResponseEntity<Void> deleteRequestById(@PathVariable Integer id){
         Request request = requestService.getRequestById(id);
