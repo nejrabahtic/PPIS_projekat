@@ -15,13 +15,13 @@ public class IncidentController {
     @Autowired
     private IncidentService incidentService;
 
-    @CrossOrigin
+    @CrossOrigin(origins = "*")
     @GetMapping()
     private ResponseEntity<List<Incident>> getAllIncidents(){
         return new ResponseEntity<>(incidentService.getAllIncidents(), HttpStatus.OK);
     }
 
-    @CrossOrigin
+    @CrossOrigin(origins = "*")
     @GetMapping(path="/{id}")
     private ResponseEntity<Incident> getIncidentById(@PathVariable Integer id){
         Incident incident = incidentService.getIncidentById(id);
@@ -31,14 +31,14 @@ public class IncidentController {
         return new ResponseEntity<>(incident, HttpStatus.OK);
     }
 
-    @CrossOrigin
+    @CrossOrigin(origins = "*")
     @PostMapping(consumes = {"application/json"})
     private ResponseEntity<Incident> createIncident(@RequestBody Incident incident){
         return new ResponseEntity<>(incidentService.createIncident(incident.getTitle(), incident.getDescription(),
                 incident.getCreated(), incident.getClosed_time(), incident.getFixed_time()), HttpStatus.CREATED);
     }
 
-    @CrossOrigin
+    @CrossOrigin(origins = "*")
     @DeleteMapping(path="{id}")
     private ResponseEntity<Void> deleteIncidentById(@PathVariable Integer id){
         Incident incident = incidentService.getIncidentById(id);
