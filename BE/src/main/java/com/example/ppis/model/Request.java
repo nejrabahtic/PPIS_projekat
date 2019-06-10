@@ -61,6 +61,7 @@ public class Request {
         this.created = new Date();
         this.category = category;
     }
+    public Request() {}
 
     public String getTitle() {
         return title;
