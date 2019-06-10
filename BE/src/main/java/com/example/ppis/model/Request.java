@@ -3,6 +3,7 @@ package com.example.ppis.model;
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import java.util.Date;
+import java.util.Locale;
 
 @Entity
 @Table(name = "request")
@@ -20,8 +21,11 @@ public class Request {
     private String description;
 
     @Column
-    @NotEmpty
     private Date created;
+
+    @Column
+    @NotEmpty
+    private String category;
 
     @ManyToOne
     @JoinColumn
@@ -51,10 +55,11 @@ public class Request {
     @JoinColumn
     private Levels urgencyLevel;
 
-    public Request(@NotEmpty String title, @NotEmpty String description, @NotEmpty Date created) {
+    public Request(@NotEmpty String title, @NotEmpty String description, @NotEmpty String category) {
         this.title = title;
         this.description = description;
-        this.created = created;
+        this.created = new Date();
+        this.category = category;
     }
 
     public String getTitle() {
@@ -79,5 +84,13 @@ public class Request {
 
     public void setCreated(Date created) {
         this.created = created;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
     }
 }

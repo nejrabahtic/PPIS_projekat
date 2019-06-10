@@ -29,9 +29,8 @@ public class IncidentService {
         return optionalIncident.orElse(null);
     }
 
-    public Incident createIncident(String title, String description, Date created,
-                                    Date closed_time,  Date fixed_time){
-        Incident incident = new Incident(title, description, created, closed_time, fixed_time);
+    public Incident createIncident(String title, String description, String category){
+        Incident incident = new Incident(title, description, category);
         return incidentRepository.save(incident);
     }
 

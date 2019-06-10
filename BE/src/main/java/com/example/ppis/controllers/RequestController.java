@@ -38,7 +38,7 @@ public class RequestController {
     @PostMapping(consumes = {"application/json"})
     private ResponseEntity<Request> createRequest(@RequestBody Request request){
         return new ResponseEntity<>(requestService.createRequest(request.getTitle(), request.getDescription(),
-                request.getCreated()), HttpStatus.CREATED);
+                request.getCategory()), HttpStatus.CREATED);
     }
 
     @CrossOrigin(origins = "*")
