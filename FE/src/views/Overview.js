@@ -10,7 +10,7 @@ function ShowRequests(props) {
 
         {
           props.requests.map( (item, index) => (
-            <a className={(() => {
+            <a href={"/requestPreview/"+item.id}className={(() => {
         switch (item.priority) {
         case 'high':   return 'red card';
         case "medium": return 'yellow card';
@@ -193,6 +193,7 @@ export default class Overview extends Component {
             currentTab: "active item",
             inactiveTab: "item",
             requests:  [{
+              'id': '1',
               'title': 'PRvi request',
               'date': '02/09/2019',
               'short_text': 'NEki tekst koji je kraci ya prvi request tekst koji je kraci jhzhzub tekst koji je kraci jhzhzub tekst koji je kraci jhzhzub',
@@ -201,6 +202,7 @@ export default class Overview extends Component {
               'urgency':'high',
               'status':'created',
             },{
+              'id': '2',
               'title': 'Drugi incident',
               'date': '03/09/2019',
               'short_text': 'NEki tekst koji ,je kraci ya drugi request jhzhzub tekst koji je kraci jhzhzub tekst koji je kraci jhzhzub tekst koji je kraci jhzhzub',
@@ -209,6 +211,7 @@ export default class Overview extends Component {
               'urgency':'high',
               'status':'pending',
             },{
+              'id':'3',
               'title': 'PRvi incident',
               'date': '06/09/2019',
               'short_text': 'NEki tekst koji je kraci ya treci requestjhzhzub tekst koji je kraci jhzhzub tekst koji je kraci jhzhzub tekst koji je kraci jhzhzub',
@@ -217,6 +220,7 @@ export default class Overview extends Component {
               'urgency':'medium',
               'status':'created',
             },{
+              'id':'4',
               'title': 'PRvi incident',
               'date': '06/09/2019',
               'short_text': 'NEki tekst koji je kraci jhzhzub tekst koji je kraci jhzhzub tekst koji je kraci jhzhzub tekst koji je kraci jhzhzub',
@@ -254,8 +258,6 @@ export default class Overview extends Component {
         <div class="ui pointing secondary menu"><a  onClick={this.chageTab} className={this.state.currentTab}> Requests</a><a onClick={this.chageTab} className={this.state.inactiveTab}>Incidents</a></div>
         <ShowRequests warn={this.state.ShowRequest} requests={this.state.requests}/>
         <ShowIncidents warn={this.state.ShowIncident} />
-
-
 
 
        </div>
