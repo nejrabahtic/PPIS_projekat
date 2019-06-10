@@ -2,21 +2,21 @@ package com.example.ppis;
 
 import java.util.Arrays;
 
+import com.example.ppis.services.*;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
+import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.event.EventListener;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import com.example.ppis.model.Role;
 import com.example.ppis.model.User;
-import com.example.ppis.services.CustomUserService;
-import com.example.ppis.services.IncidentService;
-import com.example.ppis.services.RequestService;
-import com.example.ppis.services.StatusService;
 
 @SpringBootApplication(exclude = { SecurityAutoConfiguration.class })
 //@EnableAutoConfiguration(exclude={DataSourceAutoConfiguration.class,HibernateJpaAutoConfiguration.class})
@@ -46,7 +46,17 @@ public class PpisApplication {
         };
     }
 
-	@Bean
+	@Autowired
+	private SeederService seederService;
+
+	@EventListener(ApplicationReadyEvent.class)
+	public void seedDatabase(){
+		seederService.seedStatusTable();
+		seederService.seedIncidentTable();
+		seederService.seedRequestTable();
+	}
+
+	/*@Bean
 	public CommandLineRunner demoRequests (RequestService requestService) {
 		return args -> {
 			requestService.createRequest("Prvi request", "Description prvog requesta", "Printing");
@@ -54,9 +64,9 @@ public class PpisApplication {
 			requestService.createRequest("Treći request", "Description trećeg requesta", "Marketing");
 			requestService.createRequest("Četvrti request", "Description četvrtog requesta", "Distribution");
 		};
-	}
+	}*/
 
-	@Bean
+	/*@Bean
 	public CommandLineRunner demoIncidents (IncidentService incidentService) {
 		return args -> {
 			incidentService.createIncident("Prvi incident", "Description prvog incidenta", "Distribution");
@@ -64,9 +74,9 @@ public class PpisApplication {
 			incidentService.createIncident("Treći incident", "Description trećeg incidenta", "Marketing");
 			incidentService.createIncident("Četvrti incident", "Description četvrtog incidenta", "Editing");
 		};
-	}
+	}*/
 
-	@Bean
+	/*@Bean
 	public CommandLineRunner demoStatuses (StatusService statusService) {
 		return  args -> {
 			statusService.createStatus("Created");
@@ -82,6 +92,6 @@ public class PpisApplication {
 			statusService.createStatus("Fullfiled");
 			statusService.createStatus("Rejected");
 		};
-	}
+	}*/
 
 }
