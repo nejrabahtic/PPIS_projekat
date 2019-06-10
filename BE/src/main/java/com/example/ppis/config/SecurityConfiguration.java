@@ -31,25 +31,28 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         http
         		.csrf().disable()
                 .authorizeRequests()
-                    .antMatchers(
-                            "/registration**",
-                            "/js/**",
-                            "/css/**",
-                            "/img/**",
-                            "/webjars/**",
-                            "/").permitAll()
-                    .antMatchers("/userhome").hasRole("USER")
-    				.antMatchers("/admin/**").hasRole("ADMIN")
-//    				.antMatchers("/edit","/update").authenticated()
-    				.and().formLogin().successHandler(successHandler)
-    				.loginPage("/login").and().logout().permitAll()
-                .and()
-                    .logout()
-                        .invalidateHttpSession(true)
-                        .clearAuthentication(true)
-                        .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
-                        .logoutSuccessUrl("/login?logout")
-                .permitAll();
+//                    .antMatchers(
+//                            "/registration**",
+//                            "/js/**",
+//                            "/css/**",
+//                            "/img/**",
+//                            "/webjars/**",
+//                            "/").permitAll()
+                .anyRequest().permitAll();
+//                    .antMatchers("/userhome").hasRole("USER")
+//    				.antMatchers("/admin/**").hasRole("ADMIN")
+////    				.antMatchers("/edit","/update").authenticated()
+//    				.and().formLogin().successHandler(successHandler)
+//    				.loginPage("/login").and().logout().permitAll()
+                    
+    				
+//                .and()
+//                    .logout()
+//                        .invalidateHttpSession(true)
+//                        .clearAuthentication(true)
+//                        .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
+//                        .logoutSuccessUrl("/login?logout")
+//                .permitAll();
     }
 
 	    @Bean

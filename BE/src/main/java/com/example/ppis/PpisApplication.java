@@ -2,15 +2,10 @@ package com.example.ppis;
 
 import java.util.Arrays;
 
-import com.example.ppis.model.Incident;
-import com.example.ppis.model.Request;
-import com.example.ppis.services.IncidentService;
-import com.example.ppis.services.RequestService;
-import com.example.ppis.services.StatusService;
-import org.apache.catalina.manager.StatusManagerServlet;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
@@ -19,8 +14,11 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import com.example.ppis.model.Role;
 import com.example.ppis.model.User;
 import com.example.ppis.services.CustomUserService;
+import com.example.ppis.services.IncidentService;
+import com.example.ppis.services.RequestService;
+import com.example.ppis.services.StatusService;
 
-@SpringBootApplication
+@SpringBootApplication(exclude = { SecurityAutoConfiguration.class })
 //@EnableAutoConfiguration(exclude={DataSourceAutoConfiguration.class,HibernateJpaAutoConfiguration.class})
 @EnableJpaRepositories("com.example.ppis.repository")
 @ComponentScan( "com.example.ppis.services")

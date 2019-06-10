@@ -6,6 +6,7 @@ import Auth from '../src/services/Auth';
 import Login from './views/Login';
 import Overview from './views/Overview';
 import Home from './views/Home';
+import DetailedRequest from './views/DetailedRequest';
 import Analytics from './views/Analytics';
 import Report from './views/Report';
 
@@ -25,13 +26,18 @@ const routes = [
       path: '/',
       exact: true,
       component: (props) => Authorized(<Home {...props} />)
-      
+
     },
     {
       path: '/overview',
       exact: true,
       component: (props) => Authorized(<Overview {...props} />)
-    },  
+    },
+    {
+      path: '/requestPreview/:id',
+      exact: true,
+      component: (props) => Authorized(<DetailedRequest {...props} />)
+    },
     {
       path: '/analytics',
       exact: true,
