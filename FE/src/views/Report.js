@@ -47,8 +47,8 @@ export default class Report extends Component {
     handleDescriptionChange = (e) => {
         this.setState({ description: e.target.value });
     }
-    handleCategoryChange = (e) => {
-        console.log(e.target);
+    handleCategoryChange = (e, data) => {
+        this.setState({ categorty: data.value})
     }   
     render(){
         const { activeView, type, title, categorty, description, categories } = this.state;
