@@ -78,6 +78,7 @@ export default class DetailedRequest extends Component {
         return(
         <div>
             <div>
+            <p></p>
             <h1 class="naslov"> {item.title}</h1>
               <h3>Type: Request</h3>
             </div>
@@ -139,22 +140,21 @@ export default class DetailedRequest extends Component {
                     <div class="row">
                       <div class="column">
                       </div>
-                      <div class="column">
+                      <div class="left floated left aligned column">
 
                       <br></br>
-                      <h2>Detailed Description </h2>
+                      <h2>History</h2>
                       </div>
-                      <div class="column"></div>
                       <div class="column"></div>
                       <div class="right floated right aligned column">
                       <br></br>
-                            <h2>History </h2>
+                            <h2>Detailed Description </h2>
                       </div>
                     </div>
 
 
                     <div class="row">
-                      <div class="column">{item.short_text}</div>
+
                       <div class="column">
                       <div class="ui comments">
                         <div class="comment">
@@ -162,12 +162,46 @@ export default class DetailedRequest extends Component {
                           <div class="content">
                             <a class="author">Admin</a>
                             <div class="metadata"><h5>2 days ago</h5></div>
-                            <div class="text">Assigned to IT department!</div>
+                            <div class="meta"><p class="tekstic">Status changed to waiting for approval!</p></div>
                           </div>
+                          <br></br>
+
+                          <div class="content">
+                            <a class="author">Admin</a>
+                            <div class="metadata"><h5>2 days ago</h5></div>
+                            <div class="meta"><p class="tekstic">Status changed to Approved!</p></div>
+                          </div>
+                          <br></br>
+
+
+                          <div class="content">
+                            <a class="author">Admin</a>
+                            <div class="metadata"><h5>2 days ago</h5></div>
+                            <div class="meta"><p class="tekstic">Status changed to In process!</p></div>
+                          </div>
+                              <br></br>
+
+                          <div class="content">
+                            <a class="author">Admin</a>
+                            <div class="metadata"><h5>2 days ago</h5></div>
+                            <div class="meta"><p class="tekstic">Status changed to waiting review!</p></div>
+                          </div>
+                              <br></br>
+
+                          <div class="content">
+                            <a class="author">Admin</a>
+                            <div class="metadata"><h5>2 days ago</h5></div>
+                            <div class="meta"><p class="tekstic">Status changed to In review!</p></div>
+                          </div>
+                              <br></br>
 
                         </div>
+
                       </div>
+
+
                       </div>
+                              <div class="column"><p class="tekstic">{item.short_text} Molimo da provjerite zahtjev. </p></div>
                     </div>
             </div>
             { (this.state.role === 'administrator' && item.status === "Waiting approval" )?

@@ -49,20 +49,22 @@ export default class Report extends Component {
     }
     handleCategoryChange = (e, data) => {
         this.setState({ categorty: data.value})
-    }   
+    }
     render(){
         const { activeView, type, title, categorty, description, categories } = this.state;
         return (
-            <div className="report-page"> 
-                <Form className="report-form secondary-color-bg">
+            <div className="report-page">
+            <h1 align="center"> Form for creating new request/incident</h1>
+            <br></br>
+                <Form className="report-form">
                     <Header className="accent-color">Request/Incident</Header>
                         <Form.Field required={true}>
-                            <label className="empty-color">Title:</label>
+                            <label className="">Title:</label>
                             <input type="text" value={title} onChange={this.handleTitleChange}></input>
                         </Form.Field>
                         <Form.Field required={true}>
                             <label className="empty-color">Categorty</label>
-                            <Form.Select 
+                            <Form.Select
                                 value={categorty}
                                 onChange={this.handleCategoryChange}
                                 options={categories.map(item => ({ key: item, text: item, value: item }))}>
@@ -80,10 +82,10 @@ export default class Report extends Component {
                                 value='req'
                                 checked={type === 'req'}
                                 onChange={this.handleTypeChange}
-                                
+
                             />
                             <Form.Radio
-                                label={() => <label className="empty-color">Incident</label>} 
+                                label={() => <label className="empty-color">Incident</label>}
                                 value='inc'
                                 checked={type === 'inc'}
                                 onChange={this.handleTypeChange}
