@@ -30,13 +30,14 @@ class Home extends Component {
         return(
             <div>
             <br></br>
-                <Header size='huge' align="center">Welcome to Book Publishing, {username}</Header>
+            <Header size='huge' align="center">Welcome to Book Publishing, {username}</Header>
                 <br></br>
-                <p class="tekst" align="center">Book Publishing je izdavačka kuća sa preko 50 filijala u 25 različitih država. Glavna filijala je smještena u Sarajevu. Book Publishing pruža podršku korisnicima pri svakom koraku u procesu nastajanja nove literature. Book Publishing također i preuzima odgovornost nad svim procesima kroz koje se prođe do objave nove literature.
-                Procesi firme se odvijaju u šest faza:</p>
+                <p class="tekst" align="center">Book Publishing is publishing house with over 50 offices in 25 different countries. HQ is located in Sarajevo. Book Publishing provides support to its clients with whole process of making books or new literature. Book Publishing also takes full responsiblity over all processes that are necessary on path of making books and literature.
+                Processes are separate in 6 phases:</p>
                 <Image size='massive' centered={true} src={Picture1} />
                 <br></br>
-<p class="tekst" align="center">Za svih 7 navedenih procesa pružamo usluge koje omogućavaju korisniku da aktivno učestvuje u realizaciji procesa.</p>
+<p class="tekst" align="center">For all 7 listed processes we provide services that will allow users to be actively involved in realization of processes.</p>
+
 
 
 
