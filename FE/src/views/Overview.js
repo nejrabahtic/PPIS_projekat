@@ -50,137 +50,44 @@ function ShowIncidents(props) {
     <div className={props.warn ? "showa": "hidea"}>
 
     <div role="list" class="ui huge celled selection middle aligned list">
-       <a class="ui red ribbon label">High priority</a>
-      <div role="listitem" class="item">
-        <i aria-hidden="true" class="marker red icon"></i>
+
+{
+    props.incidents.map((item,index) =>(
+<div role="listitem" href={"/requestPreview/"+item.id} class="item" key={index}>
+    ))
+    <a href={"/requestPreview/"+item.id} c>
+    <a  className={(() => {
+      switch (item.priority) {
+      case 'high':   return 'ui red ribbon label';
+      case "medium": return 'ui yellow ribbon label';
+      default:      return 'ui green ribbon label';
+      }
+    })()} >Priotity: {item.priority}
+    </a><p></p>
+        
         <div class="content">
-          <a class="header">Krowlewskie Jadlo</a>
+
+          <a class="header">{item.title}</a>
+          <div class="fontt"> Status: {item.status} </div>
+          <div class="fontt"> Urgency: {item.urgency} </div>
           <div class="description">
-            An excellent polish restaurant, quick delivery and hearty, filling
-            meals.
-          </div><a class="ui label"><i aria-hidden="true" class="user icon"/>Aamina1</a>
-          <span>20/05/2019</span>
-        </div>
-      </div>
-      <div role="listitem" class="item">
-        <i aria-hidden="true" class="marker red icon"></i>
-        <div class="content">
-          <a class="header">Xian Famous Foods</a>
-          <div class="description">
-            A taste of Shaanxi&#x27;s delicious culinary traditions, with delights
-            like spicy cold noodles and lamb burgers.
+          {item.short_text}
           </div>
-        </div>
+          <span class="datum">{item.date}</span>
+                  </div>
+          <a class="ui label"><i aria-hidden="true" class="users icon"/>{item.department}</a>
+  </a>
       </div>
-      <div role="listitem" class="item">
-        <i aria-hidden="true" class="marker orange icon"></i>
-        <div class="content">
-          <a class="header">Sapporo Haru</a>
-          <div class="description">
-            Greenpoint&#x27;s best choice for quick and delicious sushi.
-          </div>
-        </div>
-      </div>
-      <div role="listitem" class="item">
-        <i aria-hidden="true" class="marker yellow icon"></i>
-        <div class="content">
-          <a class="header">Enid&#x27;s</a>
-          <div class="description">
-            At night a bar, during the day a delicious brunch spot.
-          </div>
-        </div>
-      </div>
+
+
+
+))
+
+}
     </div>
 
-
-    <div role="list" class="ui huge celled selection middle aligned list">
-  <a class="ui yellow ribbon label">Medium priority</a>
- <div role="listitem" class="item">
-   <i aria-hidden="true" class="marker red icon"></i>
-   <div class="content">
-     <a class="header">Krowlewskie Jadlo</a>
-     <div class="description">
-       An excellent polish restaurant, quick delivery and hearty, filling
-       meals.
-     </div>
-     <span>aamina1</span>
-   </div>
- </div>
- <div role="listitem" class="item">
-   <i aria-hidden="true" class="marker red icon"></i>
-   <div class="content">
-     <a class="header">Xian Famous Foods</a>
-     <div class="description">
-       A taste of Shaanxi&#x27;s delicious culinary traditions, with delights
-       like spicy cold noodles and lamb burgers.
-     </div>
-   </div>
- </div>
- <div role="listitem" class="item">
-   <i aria-hidden="true" class="marker orange icon"></i>
-   <div class="content">
-     <a class="header">Sapporo Haru</a>
-     <div class="description">
-       Greenpoint&#x27;s best choice for quick and delicious sushi.
-     </div>
-   </div>
- </div>
- <div role="listitem" class="item">
-   <i aria-hidden="true" class="marker yellow icon"></i>
-   <div class="content">
-     <a class="header">Enid&#x27;s</a>
-     <div class="description">
-       At night a bar, during the day a delicious brunch spot.
-     </div>
-   </div>
- </div>
-</div>
-
-
-<div role="list" class="ui huge celled selection middle aligned list">
-  <a class="ui green ribbon label">Low priority</a>
- <div role="listitem" class="item">
-   <i aria-hidden="true" class="marker red icon"></i>
-   <div class="content">
-     <a class="header">Krowlewskie Jadlo</a>
-     <div class="description">
-       An excellent polish restaurant, quick delivery and hearty, filling
-       meals.
-     </div>
-     <span>aamina1</span>
-   </div>
- </div>
- <div role="listitem" class="item">
-   <i aria-hidden="true" class="marker red icon"></i>
-   <div class="content">
-     <a class="header">Xian Famous Foods</a>
-     <div class="description">
-       A taste of Shaanxi&#x27;s delicious culinary traditions, with delights
-       like spicy cold noodles and lamb burgers.
-     </div>
-   </div>
- </div>
- <div role="listitem" class="item">
-   <i aria-hidden="true" class="marker orange icon"></i>
-   <div class="content">
-     <a class="header">Sapporo Haru</a>
-     <div class="description">
-       Greenpoint&#x27;s best choice for quick and delicious sushi.
-     </div>
-   </div>
- </div>
- <div role="listitem" class="item">
-   <i aria-hidden="true" class="marker yellow icon"></i>
-   <div class="content">
-     <a class="header">Enid&#x27;s</a>
-     <div class="description">
-       At night a bar, during the day a delicious brunch spot.
-     </div>
-   </div>
-   </div>
-   </div>
-
     </div>
+
   );
 }
 
@@ -196,6 +103,44 @@ export default class Overview extends Component {
             requests:  [{
               'id': '1',
               'title': 'PRvi request',
+              'date': '02/09/2019',
+              'short_text': 'NEki tekst koji je kraci ya prvi request tekst koji je kraci jhzhzub tekst koji je kraci jhzhzub tekst koji je kraci jhzhzub',
+              'department': 'IT department',
+              'priority': 'high',
+              'urgency':'high',
+              'status':'created',
+            },{
+              'id': '2',
+              'title': 'Drugi incident',
+              'date': '03/09/2019',
+              'short_text': 'NEki tekst koji ,je kraci ya drugi request jhzhzub tekst koji je kraci jhzhzub tekst koji je kraci jhzhzub tekst koji je kraci jhzhzub',
+              'department': 'IT department',
+              'priority': 'medium',
+              'urgency':'high',
+              'status':'pending',
+            },{
+              'id':'3',
+              'title': 'PRvi incident',
+              'date': '06/09/2019',
+              'short_text': 'NEki tekst koji je kraci ya treci requestjhzhzub tekst koji je kraci jhzhzub tekst koji je kraci jhzhzub tekst koji je kraci jhzhzub',
+              'department': 'IT department',
+              'priority': 'low',
+              'urgency':'medium',
+              'status':'created',
+            },{
+              'id':'4',
+              'title': 'PRvi incident',
+              'date': '06/09/2019',
+              'short_text': 'NEki tekst koji je kraci jhzhzub tekst koji je kraci jhzhzub tekst koji je kraci jhzhzub tekst koji je kraci jhzhzub',
+              'department': 'IT department',
+              'priority': 'high',
+              'urgency':'high',
+              'status':'created',
+            }],
+
+            incidents:  [{
+              'id': '1',
+              'title': 'PRvi incident',
               'date': '02/09/2019',
               'short_text': 'NEki tekst koji je kraci ya prvi request tekst koji je kraci jhzhzub tekst koji je kraci jhzhzub tekst koji je kraci jhzhzub',
               'department': 'IT department',
@@ -261,7 +206,7 @@ export default class Overview extends Component {
           <span onClick={this.chageTab} className={this.state.inactiveTab}>Incidents</span>
         </div>
         <ShowRequests warn={this.state.ShowRequest} requests={this.state.requests}/>
-        <ShowIncidents warn={this.state.ShowIncident} />
+        <ShowIncidents warn={this.state.ShowIncident} incidents={this.state.incidents}/>
 
 
        </div>

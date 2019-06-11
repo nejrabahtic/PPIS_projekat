@@ -1,0 +1,17 @@
+.tekst{
+  margin-left: 250px;
+  margin-right: 250px;
+  font-size: 24px;
+  text-align: justify;
+}
+
+.mybutton{
+  width: 30%;
+  height: 50px;
+  background-color: #116466;
+  color: white;
+  align: center;
+  margin-left: 35%;
+  font-size: 16px;
+  font-weight: bold;
+}
