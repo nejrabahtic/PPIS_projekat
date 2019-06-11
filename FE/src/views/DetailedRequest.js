@@ -8,7 +8,6 @@ export default class DetailedRequest extends Component {
           'id': '1',
           'title': 'PRvi request',
           'date': '02/09/2019',
-          'short_text': 'NEki tekst koji je kraci ya prvi request tekst koji je kraci jhzhzub tekst koji je kraci jhzhzub tekst koji je kraci jhzhzub',
           'department': 'IT department',
           'creator': 'Neko Nekic',
           'priority': 'high',
@@ -16,7 +15,7 @@ export default class DetailedRequest extends Component {
           'status':'created',
           'report_method': 'By application',
           'contact_method': 'Telephone',
-          'long_text': 'A long description A long description A long description A long DescriptionA short descriptionA long description A long description A long description A long description A long DescriptionA short descriptionA long description A long description A long description A long description A long DescriptionA short descriptionA long description A long description A long description A long description A long DescriptionA short descriptionA long description A long description A long description A long description A long DescriptionA short descriptionA long description'
+          'description': 'A long description A long description A long description A long DescriptionA short descriptionA long description A long description A long description A long description A long DescriptionA short descriptionA long description A long description A long description A long description A long DescriptionA short descriptionA long description A long description A long description A long description A long DescriptionA short descriptionA long description A long description A long description A long description A long DescriptionA short descriptionA long description'
         }]
 
       }
@@ -102,48 +101,35 @@ export default class DetailedRequest extends Component {
               <div class="column"></div>
               <div class="right floated right aligned column">
               <br></br>
-                    <h4>Description </h4>
+                    <h4>Comments </h4>
               </div>
             </div>
 
 
             <div class="row">
-              <div class="column">{item.long_text}</div>
-              <div class="column"><h5>{item.short_text}</h5></div>
-            </div>
+              <div class="column">{item.description}</div>
+              <div class="column">
+              <div class="ui comments">
+                <div class="comment">
 
-
-
-          <div class="row">
-            <div class="column"></div>
-              <div class="column"></div>
-            <div class="column"></div>
-            <div class="column"></div>
-            <div class="column"></div>
-            <div class="column"></div>
-            <div class="right floated right aligned column">
-                  <h4>Comments </h4>
-            </div>
-          </div>
-
-
-          <div class="row">
-            <div class="column">
-            <div class="ui comments">
-              <div class="comment">
-
-                <div class="content">
-                  <a class="author">Admin</a>
-                  <div class="metadata"><div>2 days ago</div></div>
-                  <div class="text">Assigned to IT department!</div>
+                  <div class="content">
+                    <a class="author">Admin</a>
+                    <div class="metadata"><div>2 days ago</div></div>
+                    <div class="text">Assigned to IT department!</div>
+                  </div>
 
                 </div>
+              </div>
+
+
               </div>
             </div>
 
 
-            </div>
-          </div>
+
+
+
+
 
 
     </div>

@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 
 import '../styles/Sidemenu.css';
 import '../styles/Color.css';
-import { withRouter } from 'react-router-dom';  
+import { withRouter } from 'react-router-dom';
 import Auth from '../services/Auth';
 
 
@@ -19,7 +19,7 @@ class Sidemenu extends Component {
         return (
             <div className="navigation-list">
                 <Image src="/logo_transparent.png" />
-                <List animated size="big" verticalAlign="middle" relaxed >
+                <List animated size="middle" verticalAlign="middle" relaxed >
                     <List.Item  as={ Link } to="/">
                         <Icon className="empty-color" name="home" />
                         <List.Content className="empty-color"> Home </List.Content>
