@@ -10,31 +10,32 @@ function ShowRequests(props) {
 
         {
           props.requests.map( (item, index) => (
-            <a href={"/requestPreview/"+item.id}className={(() => {
-        switch (item.priority) {
-        case 'high':   return 'red card';
-        case "medium": return 'yellow card';
-        default:      return 'green card';
-      }
+            <a href={"/requestPreview/"+item.id} className={(() => {
+                switch (item.priority) {
+                case 'high':   return 'red card';
+                case "medium": return 'yellow card';
+                default:      return 'green card';
+              }
             })()} key={index}>
 
 
             <p class="statuss">Status: {item.status}</p>
               <div class="content">
-              <div class="meta">
-              <span class="right floated time">{item.date}</span>
-                              </div>
-                <div class="header">{item.title}</div><br></br>
+                <div class="meta">
+                  <span class="right floated time">{item.date}</span>
+                </div>
+                <div class="header">{item.title}</div>
+                <br></br>
                 <div class="meta">
                   <span class="category">Urgency: {item.urgency}</span>
-                  </div>
+                </div>
                 <div class="description">
                   <p>{item.short_text}</p>
                 </div>
               </div>
               <div class="extra content">
                 {item.department}
-                              <span class="right floated time">Priority:{item.priority}</span>
+                <span class="right floated time">Priority: <strong>{item.priority}</strong></span>
               </div>
             </a>
           ))
