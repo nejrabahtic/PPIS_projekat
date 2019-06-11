@@ -7,3 +7,7 @@
 .center-flex-buttons > button {
     margin: 0 7px !important;
 }
+
+.author{
+  font-size: 14px;
+}
