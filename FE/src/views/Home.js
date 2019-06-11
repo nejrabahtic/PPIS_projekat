@@ -30,19 +30,18 @@ class Home extends Component {
         return(
             <div>
             <br></br>
-                <Header size='huge' align="center">Welcome to Book Publishing</Header>
-                <Header align="center"
-                    size="large"
-                    content={username}
-                    subheader={role}
-                />
-
+                <Header size='huge' align="center">Welcome to Book Publishing, {username}</Header>
+                <br></br>
                 <p class="tekst" align="center">Book Publishing je izdavačka kuća sa preko 50 filijala u 25 različitih država. Glavna filijala je smještena u Sarajevu. Book Publishing pruža podršku korisnicima pri svakom koraku u procesu nastajanja nove literature. Book Publishing također i preuzima odgovornost nad svim procesima kroz koje se prođe do objave nove literature.
                 Procesi firme se odvijaju u šest faza:</p>
-                <Image src={Picture1} />
+                <Image size='massive' centered={true} src={Picture1} />
                 <br></br>
+<p class="tekst" align="center">Za svih 7 navedenih procesa pružamo usluge koje omogućavaju korisniku da aktivno učestvuje u realizaciji procesa.</p>
 
-                <br></br>
+
+
+
+                <br></br><br></br>
                   <div class="ui four statistics">
                     <div class="ui blue statistic">
                       <div class="value">
@@ -78,7 +77,7 @@ class Home extends Component {
 
     <button class="mybutton" onClick={() => {
         history.push('/report')
-    }}>CREATE YOUR REQUEST</button>
+    }}>CREATE YOUR REQUEST <i aria-hidden="true" class="long arrow alternate right icon"></i></button>
 
             </div>
         )
