@@ -6,6 +6,7 @@ import '../styles/Overview.css';
 function ShowRequests(props) {
   return (
     <div className={props.warn ? "showa": "hidea"}>
+    <br></br><p></p>
     <div class="ui three cards" >
 
         {
@@ -19,18 +20,18 @@ function ShowRequests(props) {
             })()} key={index}>
 
 
-            <p class="statuss">Status: {item.status}</p>
+            <p class="statuss">{item.status}</p>
               <div class="content">
                 <div class="meta">
                   <span class="right floated time">{item.date}</span>
                 </div>
-                <div class="header">{item.title}</div>
+                <div class="header"><h3>{item.title}</h3></div>
                 <br></br>
                 <div class="meta">
                   <span class="category">Urgency: {item.urgency}</span>
                 </div>
                 <div class="description">
-                  <p>{item.short_text}</p>
+                  <h4>{item.short_text}</h4>
                 </div>
               </div>
               <div class="extra content">
@@ -48,7 +49,7 @@ function ShowRequests(props) {
 function ShowIncidents(props) {
   return (
     <div className={props.warn ? "showa": "hidea"}>
-
+    <br></br>
     <div role="list" class="ui huge celled selection middle aligned list">
 
 {
@@ -64,7 +65,7 @@ function ShowIncidents(props) {
       }
     })()} >Priotity: {item.priority}
     </a><p></p>
-        
+
         <div class="content">
 
           <a class="header">{item.title}</a>
@@ -77,6 +78,7 @@ function ShowIncidents(props) {
                   </div>
           <a class="ui label"><i aria-hidden="true" class="users icon"/>{item.department}</a>
   </a>
+  <br></br> 
       </div>
 
 
@@ -198,12 +200,12 @@ export default class Overview extends Component {
      return (
 
     <div>
-
-        <div class="ui huge header">Overview</div>
+      <p></p>
+        <div class="ui huge header" align='center'><h1>Overview</h1></div>
 
         <div class="ui pointing secondary menu">
-          <span onClick={this.chageTab} className={this.state.currentTab}> Requests</span>
-          <span onClick={this.chageTab} className={this.state.inactiveTab}>Incidents</span>
+          <span onClick={this.chageTab} className={this.state.currentTab}><h3> Requests</h3></span>
+          <span onClick={this.chageTab} className={this.state.inactiveTab}><h3>Incidents</h3></span>
         </div>
         <ShowRequests warn={this.state.ShowRequest} requests={this.state.requests}/>
         <ShowIncidents warn={this.state.ShowIncident} incidents={this.state.incidents}/>
