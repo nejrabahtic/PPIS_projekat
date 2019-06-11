@@ -200,7 +200,10 @@ export default class Overview extends Component {
 
         <div class="ui huge header">Overview</div>
 
-        <div class="ui pointing secondary menu"><a  onClick={this.chageTab} className={this.state.currentTab}> Requests</a><a onClick={this.chageTab} className={this.state.inactiveTab}>Incidents</a></div>
+        <div class="ui pointing secondary menu">
+          <span onClick={this.chageTab} className={this.state.currentTab}> Requests</span>
+          <span onClick={this.chageTab} className={this.state.inactiveTab}>Incidents</span>
+        </div>
         <ShowRequests warn={this.state.ShowRequest} requests={this.state.requests}/>
         <ShowIncidents warn={this.state.ShowIncident} incidents={this.state.incidents}/>
 

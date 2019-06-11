@@ -16,7 +16,11 @@ export default class Report extends Component {
         super(props);
         this.state = {
             activeView: userTypes.USER,
-            type: null
+            type: null,
+            title: "",
+            categorty: "",
+            description: "",
+            categories: ["Editing", "Marketing", "Distribution", "Printing"]
         }
     }
     componentDidMount(){
@@ -34,43 +38,58 @@ export default class Report extends Component {
     handleTypeChange = (event, data) => {
         this.setState({type: data.value});
     }
+    submit = () => {
+        console.log(this.state.title, this.state.categorty, this.state.description, this.state.type);
+    }
+    handleTitleChange = (e) => {
+        this.setState({ title: e.target.value })
+    }
+    handleDescriptionChange = (e) => {
+        this.setState({ description: e.target.value });
+    }
+    handleCategoryChange = (e, data) => {
+        this.setState({ categorty: data.value})
+    }   
     render(){
-        const { activeView, type } = this.state;
+        const { activeView, type, title, categorty, description, categories } = this.state;
         return (
             <div className="report-page"> 
                 <Form className="report-form secondary-color-bg">
                     <Header className="accent-color">Request/Incident</Header>
                         <Form.Field required={true}>
                             <label className="empty-color">Title:</label>
-                            <input></input>
+                            <input type="text" value={title} onChange={this.handleTitleChange}></input>
                         </Form.Field>
                         <Form.Field required={true}>
                             <label className="empty-color">Categorty</label>
-                            <Form.Select options={[{text:"Editing"}, {text:"Marketing"}, {text:"Distribution"}, {text:"Printing"}]}>
+                            <Form.Select 
+                                value={categorty}
+                                onChange={this.handleCategoryChange}
+                                options={categories.map(item => ({ key: item, text: item, value: item }))}>
 
                             </Form.Select>
                         </Form.Field>
                         <Form.Field required={true}>
                             <label className="empty-color">Description:</label>
-                            <textarea className="description" rows="10" ></textarea>
+                            <textarea className="description" rows="10" value={description} onChange={this.handleDescriptionChange}></textarea>
                         </Form.Field>
                         <Form.Field required={true}>
                             <label className="empty-color">Type:</label>
                             <Form.Radio
-                                label='Request'
+                                label={() => <label className="empty-color">Request</label>}
                                 value='req'
                                 checked={type === 'req'}
                                 onChange={this.handleTypeChange}
                                 
                             />
                             <Form.Radio
-                                label='Incident'    
+                                label={() => <label className="empty-color">Incident</label>} 
                                 value='inc'
                                 checked={type === 'inc'}
                                 onChange={this.handleTypeChange}
                             />
                             <Form.Radio
-                                label='Not Sure'
+                                label={() => <label className="empty-color">Not Sure</label>}
                                 value='nots'
                                 disabled={activeView !== userTypes.USER}
                                 checked={type === 'nots'}
@@ -78,7 +97,7 @@ export default class Report extends Component {
                             />
                         </Form.Field>
 
-                    <Button type="sumbit"className="sumbit-button">Submit</Button>
+                    <Button type="sumbit"className="sumbit-button" onClick={this.submit}>Submit</Button>
                 </Form>
 
             </div>

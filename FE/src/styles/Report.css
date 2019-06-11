@@ -6,7 +6,6 @@
     padding: 30px;
 }
 .report-form{
-    width: 60%;
     padding: 30px;
 }
 .description{
@@ -29,4 +28,7 @@
 .datum{
   font-size: 15px;
   color:blue;
+}
+textarea{
+    resize: none !important;
 }
