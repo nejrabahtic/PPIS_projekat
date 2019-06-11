@@ -24,3 +24,8 @@
 .type_date{
   margin-left: 15px;;
 }
+
+.flex-column{
+  display: flex;
+  flex-direction: column;
+}

@@ -28,7 +28,6 @@ export default class DetailedRequest extends Component {
 
 
             <div class="row">
-
               <div class="column"></div>
               <div class="column"></div>
               <div class="column"></div>
@@ -59,8 +58,16 @@ export default class DetailedRequest extends Component {
                       </div>
                   </div>
             </div>
+            <div class="column">
 
-
+            </div>
+            <div class="column">
+              <h5>High </h5>
+              <h5>Medium </h5>
+              <h5>Created </h5>
+              <h5>By application </h5>
+              <h5>Telephone </h5>
+            </div>
             <div class="right floated right aligned column">
             <p></p>
                     <h4 class="meta">Assigned to:</h4>
@@ -104,8 +111,6 @@ export default class DetailedRequest extends Component {
                     <h4>Comments </h4>
               </div>
             </div>
-
-
             <div class="row">
               <div class="column">{item.description}</div>
               <div class="column">
