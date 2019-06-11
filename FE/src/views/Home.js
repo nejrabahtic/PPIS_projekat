@@ -39,7 +39,7 @@ class Home extends Component {
 
                 <p class="tekst" align="center">Book Publishing je izdavačka kuća sa preko 50 filijala u 25 različitih država. Glavna filijala je smještena u Sarajevu. Book Publishing pruža podršku korisnicima pri svakom koraku u procesu nastajanja nove literature. Book Publishing također i preuzima odgovornost nad svim procesima kroz koje se prođe do objave nove literature.
                 Procesi firme se odvijaju u šest faza:</p>
-                <Image src="/Picture1.png" />
+
 <div class="ui small image"><img src="/Picture1.png" /></div>
                 <br></br>
 
