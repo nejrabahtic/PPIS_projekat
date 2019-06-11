@@ -78,9 +78,9 @@ export default class DetailedRequest extends Component {
               <h5>Contact method: </h5>
               </div>
               <div class="column">
-                <h5>{this.priority} </h5>
-                <h5>{this.urgency} </h5>
-                <h5>{this.status} </h5>
+                <h5>{item.priority} </h5>
+                <h5>{item.urgency} </h5>
+                <h5>{item.status} </h5>
               </div>
               <div class="right floated right aligned column">
                   <h5>Priority: </h5>
@@ -131,20 +131,12 @@ export default class DetailedRequest extends Component {
             <div class="column">
             <div class="ui comments">
               <div class="comment">
-                <a class="avatar"
-                  ><img src="https://react.semantic-ui.com/images/avatar/small/steve.jpg"
-                /></a>
+
                 <div class="content">
                   <a class="author">Admin</a>
                   <div class="metadata"><div>2 days ago</div></div>
-                  <div class="text">This request is assigned to Management department!</div>
-                  <div class="actions"><a class="active">Reply</a></div>
-                  <form class="ui reply form">
-                    <div class="field"><textarea  placeholder="Write your comment" rows="3"></textarea></div>
-                    <button class="ui icon primary left labeled button">
-                      <i aria-hidden="true" class="edit icon"></i>Add Reply
-                    </button>
-                  </form>
+                  <div class="text">Assigned to IT department!</div>
+
                 </div>
               </div>
             </div>
