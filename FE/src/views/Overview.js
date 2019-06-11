@@ -104,6 +104,10 @@ export default class Overview extends Component {
             inactiveTab: "item",
             requests:  [{
               'id': '1',
+              'title': 'Reviewing books online permission',
+              'date': '02/09/2019',
+              'short_text': 'I need permission in order to access module for reviewing books. Can you provide that for me?',
+              'department': 'Copy editing',
               'title': 'Zahtjev za pristup bazi',
               'date': '02/09/2019',
               'short_text': 'Trebaju admin privilegije korisniku Muhamed_Dev za pristup bazi Fakture radi korekcije pogrešno unesene stavke.',
@@ -114,6 +118,44 @@ export default class Overview extends Component {
               "creator":"Nedim Džonlagić"
             },{
               'id': '2',
+              'title': 'Change template',
+              'date': '03/09/2019',
+              'short_text': 'Suggestions for changing book template',
+              'department': 'Production',
+              'priority': 'medium',
+              'urgency':'medium',
+              'status':'pending',
+            },{
+              'id':'3',
+              'title': 'New cover page',
+              'date': '06/09/2019',
+              'short_text': 'Changes in design',
+              'department': 'Production',
+              'priority': 'low',
+              'urgency':'medium',
+              'status':'created',
+            },{
+              'id': '4',
+              'title': 'Designing books online permission',
+              'date': '06/09/2019',
+              'short_text': 'I need permission for access design module',
+              'department': 'Aquisition',
+              'priority': 'low',
+              'urgency':'high',
+              'status':'created',
+            },
+            {
+              'id': '5',
+              'title': 'Marketing issues',
+              'date': '06/09/2019',
+              'short_text': 'Needed mail and number of company that do marketing',
+              'department': 'Marketing',
+              'priority': 'low',
+              'urgency':'high',
+              'status':'pending',
+            },
+            {
+              'id': '6',
               'title': 'Dodatni copy editing potreban',
               'date': '03/09/2019',
               'short_text': 'Primijćene su dodatne nekonzistentnosti prilikom pregleda knjige "Naučite c++ za 365 dana", te je potrebno uraditi još jedan ili više copy editinga',
@@ -122,8 +164,9 @@ export default class Overview extends Component {
               'urgency':'high',
               'status':'Waiting approval',
               "creator":"Nejra Bahtić"
-            },{
-              'id':'3',
+            },
+            {
+              'id':'7',
               'title': 'Otkazati distribuciju u Etiopiji',
               'date': '06/08/2019',
               'short_text': 'Nema smisla prodavati knjigu "Gurmetska hrana" po regijama Etiopije te treba otkazati sve planove i dogovore.',
@@ -132,8 +175,9 @@ export default class Overview extends Component {
               'urgency':'low',
               'status':'Approved',
               "creator":"Muhamed Delalić"
-            },{
-              'id':'4',
+            },
+            {
+              'id':'8',
               'title': 'Potreban dodatni marketing',
               'date': '06/09/2019',
               'short_text': 'Novo izdanje knjige "100 dana ispita" treba dodatni društveni marketing. Ciljna grupa su osobe starosnih dobi od 15 do 25 godina, ',
@@ -142,8 +186,9 @@ export default class Overview extends Component {
               'urgency':'high',
               'status':'Waiting review',
               "creator":"Nedim Džonlagić"
-            },{
-              'id':'5',
+            },
+            {
+              'id':'9',
               'title': 'Potrebna nova cover slika',
               'date': '30/08/2019',
               'short_text': 'Stara slika za knjigu "Nema predavanja" se ne slaže sa starom. Potrebno je dizajnirati novu sliku koja je više adekvatna.',
@@ -152,40 +197,41 @@ export default class Overview extends Component {
               'urgency':'low',
               'status':'Fulfilled',
               "creator":"Amina Aljićević"
-            }],
+            }
+          ],
 
             incidents:  [{
               'id': '1',
-              'title': 'PRvi incident',
+              'title': 'Network unavailable',
               'date': '02/09/2019',
-              'short_text': 'NEki tekst koji je kraci ya prvi request tekst koji je kraci jhzhzub tekst koji je kraci jhzhzub tekst koji je kraci jhzhzub',
+              'short_text': 'Something regarding network is broken and we can not connected on our network in odred to have access to internet',
               'department': 'IT department',
               'priority': 'high',
               'urgency':'high',
               'status':'created',
             },{
               'id': '2',
-              'title': 'Drugi incident',
+              'title': 'Printer broken',
               'date': '03/09/2019',
-              'short_text': 'NEki tekst koji ,je kraci ya drugi request jhzhzub tekst koji je kraci jhzhzub tekst koji je kraci jhzhzub tekst koji je kraci jhzhzub',
+              'short_text': 'Main printer for book printing is broken. It is not missing paper or cartridge.',
               'department': 'IT department',
-              'priority': 'medium',
+              'priority': 'high',
               'urgency':'high',
               'status':'pending',
             },{
               'id':'3',
-              'title': 'PRvi incident',
+              'title': 'Email is not working',
               'date': '06/09/2019',
-              'short_text': 'NEki tekst koji je kraci ya treci requestjhzhzub tekst koji je kraci jhzhzub tekst koji je kraci jhzhzub tekst koji je kraci jhzhzub',
+              'short_text': 'My email is not working. Please help.',
               'department': 'IT department',
-              'priority': 'low',
+              'priority': 'medium',
               'urgency':'medium',
-              'status':'created',
+              'status':'pending',
             },{
               'id':'4',
-              'title': 'PRvi incident',
+              'title': 'Unable to open PDF documents',
               'date': '06/09/2019',
-              'short_text': 'NEki tekst koji je kraci jhzhzub tekst koji je kraci jhzhzub tekst koji je kraci jhzhzub tekst koji je kraci jhzhzub',
+              'short_text': 'After I updated windows last night, I am not able to open PDF documents',
               'department': 'IT department',
               'priority': 'high',
               'urgency':'high',

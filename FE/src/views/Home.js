@@ -70,7 +70,7 @@ class Home extends Component {
                     created="08/05/2019"
                     description="Cute dogs come in a variety of shapes and sizes. Some cute dogs are cute for their adorable faces, others for their tiny stature, and even others for their massive size."
                 /> */}
-<br></br>ž<br></br> <br></br>
+<br></br><br></br> <br></br>
 
 
 
