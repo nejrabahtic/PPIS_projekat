@@ -104,10 +104,6 @@ export default class Overview extends Component {
             inactiveTab: "item",
             requests:  [{
               'id': '1',
-              'title': 'Reviewing books online permission',
-              'date': '02/09/2019',
-              'short_text': 'I need permission in order to access module for reviewing books. Can you provide that for me?',
-              'department': 'Copy editing',
               'title': 'Zahtjev za pristup bazi',
               'date': '02/09/2019',
               'short_text': 'Trebaju admin privilegije korisniku Muhamed_Dev za pristup bazi Fakture radi korekcije pogrešno unesene stavke.',
@@ -124,7 +120,8 @@ export default class Overview extends Component {
               'department': 'Production',
               'priority': 'medium',
               'urgency':'medium',
-              'status':'pending',
+              'status':'Waiting review',
+              "creator":"Nedim Džonlagić"
             },{
               'id':'3',
               'title': 'New cover page',
@@ -133,7 +130,8 @@ export default class Overview extends Component {
               'department': 'Production',
               'priority': 'low',
               'urgency':'medium',
-              'status':'created',
+              'status':'In process',
+              "creator":"Nedim Džonlagić"
             },{
               'id': '4',
               'title': 'Designing books online permission',
@@ -142,7 +140,8 @@ export default class Overview extends Component {
               'department': 'Aquisition',
               'priority': 'low',
               'urgency':'high',
-              'status':'created',
+              'status':'Rejected',
+              "creator":"Nedim Džonlagić"
             },
             {
               'id': '5',
@@ -152,7 +151,8 @@ export default class Overview extends Component {
               'department': 'Marketing',
               'priority': 'low',
               'urgency':'high',
-              'status':'pending',
+              'status':'Waiting approval',
+              "creator":"Nejra Bahtić"
             },
             {
               'id': '6',
@@ -208,7 +208,7 @@ export default class Overview extends Component {
               'department': 'IT department',
               'priority': 'high',
               'urgency':'high',
-              'status':'created',
+              'status':'Fulfilled',
             },{
               'id': '2',
               'title': 'Printer broken',
@@ -217,7 +217,7 @@ export default class Overview extends Component {
               'department': 'IT department',
               'priority': 'high',
               'urgency':'high',
-              'status':'pending',
+              'status':'Waiting review',
             },{
               'id':'3',
               'title': 'Email is not working',
@@ -226,7 +226,7 @@ export default class Overview extends Component {
               'department': 'IT department',
               'priority': 'medium',
               'urgency':'medium',
-              'status':'pending',
+              'status':'Waiting review',
             },{
               'id':'4',
               'title': 'Unable to open PDF documents',
@@ -235,7 +235,7 @@ export default class Overview extends Component {
               'department': 'IT department',
               'priority': 'high',
               'urgency':'high',
-              'status':'created',
+              'status':'Approved',
             }]
         }
     }

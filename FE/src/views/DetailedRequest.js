@@ -10,7 +10,7 @@ export default class DetailedRequest extends Component {
       this.state = {
         role: null,
         id: 1,
-        requests: [{
+        requests:  [{
           'id': '1',
           'title': 'Zahtjev za pristup bazi',
           'date': '02/09/2019',
@@ -22,6 +22,48 @@ export default class DetailedRequest extends Component {
           "creator":"Nedim Džonlagić"
         },{
           'id': '2',
+          'title': 'Change template',
+          'date': '03/09/2019',
+          'short_text': 'Suggestions for changing book template',
+          'department': 'Production',
+          'priority': 'medium',
+          'urgency':'medium',
+          'status':'Waiting review',
+          "creator":"Nedim Džonlagić"
+        },{
+          'id':'3',
+          'title': 'New cover page',
+          'date': '06/09/2019',
+          'short_text': 'Changes in design',
+          'department': 'Production',
+          'priority': 'low',
+          'urgency':'medium',
+          'status':'In process',
+          "creator":"Nedim Džonlagić"
+        },{
+          'id': '4',
+          'title': 'Designing books online permission',
+          'date': '06/09/2019',
+          'short_text': 'I need permission for access design module',
+          'department': 'Aquisition',
+          'priority': 'low',
+          'urgency':'high',
+          'status':'Rejected',
+          "creator":"Nedim Džonlagić"
+        },
+        {
+          'id': '5',
+          'title': 'Marketing issues',
+          'date': '06/09/2019',
+          'short_text': 'Needed mail and number of company that do marketing',
+          'department': 'Marketing',
+          'priority': 'low',
+          'urgency':'high',
+          'status':'Waiting approval',
+          "creator":"Nejra Bahtić"
+        },
+        {
+          'id': '6',
           'title': 'Dodatni copy editing potreban',
           'date': '03/09/2019',
           'short_text': 'Primijćene su dodatne nekonzistentnosti prilikom pregleda knjige "Naučite c++ za 365 dana", te je potrebno uraditi još jedan ili više copy editinga',
@@ -30,8 +72,9 @@ export default class DetailedRequest extends Component {
           'urgency':'high',
           'status':'Waiting approval',
           "creator":"Nejra Bahtić"
-        },{
-          'id':'3',
+        },
+        {
+          'id':'7',
           'title': 'Otkazati distribuciju u Etiopiji',
           'date': '06/08/2019',
           'short_text': 'Nema smisla prodavati knjigu "Gurmetska hrana" po regijama Etiopije te treba otkazati sve planove i dogovore.',
@@ -40,8 +83,9 @@ export default class DetailedRequest extends Component {
           'urgency':'low',
           'status':'Approved',
           "creator":"Muhamed Delalić"
-        },{
-          'id':'4',
+        },
+        {
+          'id':'8',
           'title': 'Potreban dodatni marketing',
           'date': '06/09/2019',
           'short_text': 'Novo izdanje knjige "100 dana ispita" treba dodatni društveni marketing. Ciljna grupa su osobe starosnih dobi od 15 do 25 godina, ',
@@ -50,8 +94,9 @@ export default class DetailedRequest extends Component {
           'urgency':'high',
           'status':'Waiting review',
           "creator":"Nedim Džonlagić"
-        },{
-          'id':'5',
+        },
+        {
+          'id':'9',
           'title': 'Potrebna nova cover slika',
           'date': '30/08/2019',
           'short_text': 'Stara slika za knjigu "Nema predavanja" se ne slaže sa starom. Potrebno je dizajnirati novu sliku koja je više adekvatna.',
@@ -60,7 +105,8 @@ export default class DetailedRequest extends Component {
           'urgency':'low',
           'status':'Fulfilled',
           "creator":"Amina Aljićević"
-        }]
+        }
+      ]
 
       }
     }
@@ -80,8 +126,8 @@ export default class DetailedRequest extends Component {
             <div>
             <p></p>
             <h1 class="naslov"> {item.title}</h1>
-              <h3>Type: Request</h3>
-            </div>
+            <h3>Type: Request</h3>
+
             <div class="ui computer reversed equal width grid" >
                     <div class="row">
                       <div class="column"></div>
