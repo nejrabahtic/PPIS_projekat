@@ -110,7 +110,8 @@ export default class Overview extends Component {
               'department': 'DevOps Department',
               'priority': 'high',
               'urgency':'high',
-              'status':'Approved'
+              'status':'Approved',
+              "creator":"Nedim Džonlagić"
             },{
               'id': '2',
               'title': 'Dodatni copy editing potreban',
@@ -119,7 +120,8 @@ export default class Overview extends Component {
               'department': 'Not set',
               'priority': 'medium',
               'urgency':'high',
-              'status':'Waiting approval'
+              'status':'Waiting approval',
+              "creator":"Nejra Bahtić"
             },{
               'id':'3',
               'title': 'Otkazati distribuciju u Etiopiji',
@@ -129,15 +131,27 @@ export default class Overview extends Component {
               'priority': 'high',
               'urgency':'low',
               'status':'Approved',
+              "creator":"Muhamed Delalić"
             },{
               'id':'4',
               'title': 'Potreban dodatni marketing',
               'date': '06/09/2019',
               'short_text': 'Novo izdanje knjige "100 dana ispita" treba dodatni društveni marketing. Ciljna grupa su osobe starosnih dobi od 15 do 25 godina, ',
-              'department': 'IT department ',
-              'priority': 'high',
+              'department': 'Marketing department ',
+              'priority': 'medium',
               'urgency':'high',
-              'status':'created',
+              'status':'Waiting review',
+              "creator":"Nedim Džonlagić"
+            },{
+              'id':'5',
+              'title': 'Potrebna nova cover slika',
+              'date': '30/08/2019',
+              'short_text': 'Stara slika za knjigu "Nema predavanja" se ne slaže sa starom. Potrebno je dizajnirati novu sliku koja je više adekvatna.',
+              'department': 'Design department',
+              'priority': 'low',
+              'urgency':'low',
+              'status':'Fulfilled',
+              "creator":"Amina Aljićević"
             }],
 
             incidents:  [{
