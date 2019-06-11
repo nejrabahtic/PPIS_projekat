@@ -6,6 +6,7 @@ import '../styles/Overview.css';
 function ShowRequests(props) {
   return (
     <div className={props.warn ? "showa": "hidea"}>
+    <br></br><p></p>
     <div class="ui three cards" >
 
         {
@@ -19,18 +20,18 @@ function ShowRequests(props) {
             })()} key={index}>
 
 
-            <p class="statuss">Status: {item.status}</p>
+            <p class="statuss">{item.status}</p>
               <div class="content">
                 <div class="meta">
                   <span class="right floated time">{item.date}</span>
                 </div>
-                <div class="header">{item.title}</div>
+                <div class="header"><h3>{item.title}</h3></div>
                 <br></br>
                 <div class="meta">
                   <span class="category">Urgency: {item.urgency}</span>
                 </div>
                 <div class="description">
-                  <p>{item.short_text}</p>
+                  <h4>{item.short_text}</h4>
                 </div>
               </div>
               <div class="extra content">
@@ -48,7 +49,7 @@ function ShowRequests(props) {
 function ShowIncidents(props) {
   return (
     <div className={props.warn ? "showa": "hidea"}>
-
+    <br></br>
     <div role="list" class="ui huge celled selection middle aligned list">
 
 {
@@ -64,7 +65,7 @@ function ShowIncidents(props) {
       }
     })()} >Priotity: {item.priority}
     </a><p></p>
-        
+
         <div class="content">
 
           <a class="header">{item.title}</a>
@@ -77,6 +78,7 @@ function ShowIncidents(props) {
                   </div>
           <a class="ui label"><i aria-hidden="true" class="users icon"/>{item.department}</a>
   </a>
+  <br></br> 
       </div>
 
 
@@ -106,9 +108,14 @@ export default class Overview extends Component {
               'date': '02/09/2019',
               'short_text': 'I need permission in order to access module for reviewing books. Can you provide that for me?',
               'department': 'Copy editing',
+              'title': 'Zahtjev za pristup bazi',
+              'date': '02/09/2019',
+              'short_text': 'Trebaju admin privilegije korisniku Muhamed_Dev za pristup bazi Fakture radi korekcije pogrešno unesene stavke.',
+              'department': 'DevOps Department',
               'priority': 'high',
               'urgency':'high',
-              'status':'created',
+              'status':'Approved',
+              "creator":"Nedim Džonlagić"
             },{
               'id': '2',
               'title': 'Change template',
@@ -146,6 +153,50 @@ export default class Overview extends Component {
               'priority': 'low',
               'urgency':'high',
               'status':'pending',
+            },
+            {
+              'id': '6',
+              'title': 'Dodatni copy editing potreban',
+              'date': '03/09/2019',
+              'short_text': 'Primijćene su dodatne nekonzistentnosti prilikom pregleda knjige "Naučite c++ za 365 dana", te je potrebno uraditi još jedan ili više copy editinga',
+              'department': 'Not set',
+              'priority': 'medium',
+              'urgency':'high',
+              'status':'Waiting approval',
+              "creator":"Nejra Bahtić"
+            },
+            {
+              'id':'7',
+              'title': 'Otkazati distribuciju u Etiopiji',
+              'date': '06/08/2019',
+              'short_text': 'Nema smisla prodavati knjigu "Gurmetska hrana" po regijama Etiopije te treba otkazati sve planove i dogovore.',
+              'department': 'Sales department',
+              'priority': 'high',
+              'urgency':'low',
+              'status':'Approved',
+              "creator":"Muhamed Delalić"
+            },
+            {
+              'id':'8',
+              'title': 'Potreban dodatni marketing',
+              'date': '06/09/2019',
+              'short_text': 'Novo izdanje knjige "100 dana ispita" treba dodatni društveni marketing. Ciljna grupa su osobe starosnih dobi od 15 do 25 godina, ',
+              'department': 'Marketing department ',
+              'priority': 'medium',
+              'urgency':'high',
+              'status':'Waiting review',
+              "creator":"Nedim Džonlagić"
+            },
+            {
+              'id':'9',
+              'title': 'Potrebna nova cover slika',
+              'date': '30/08/2019',
+              'short_text': 'Stara slika za knjigu "Nema predavanja" se ne slaže sa starom. Potrebno je dizajnirati novu sliku koja je više adekvatna.',
+              'department': 'Design department',
+              'priority': 'low',
+              'urgency':'low',
+              'status':'Fulfilled',
+              "creator":"Amina Aljićević"
             }
           ],
 
@@ -209,12 +260,12 @@ export default class Overview extends Component {
      return (
 
     <div>
-
-        <div class="ui huge header">Overview</div>
+      <p></p>
+        <div class="ui huge header" align='center'><h1>Overview</h1></div>
 
         <div class="ui pointing secondary menu">
-          <span onClick={this.chageTab} className={this.state.currentTab}> Requests</span>
-          <span onClick={this.chageTab} className={this.state.inactiveTab}>Incidents</span>
+          <span onClick={this.chageTab} className={this.state.currentTab}><h3> Requests</h3></span>
+          <span onClick={this.chageTab} className={this.state.inactiveTab}><h3>Incidents</h3></span>
         </div>
         <ShowRequests warn={this.state.ShowRequest} requests={this.state.requests}/>
         <ShowIncidents warn={this.state.ShowIncident} incidents={this.state.incidents}/>

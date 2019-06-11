@@ -61,27 +61,37 @@ export default class Analytics extends Component {
     render(){
         return (
             <div>
+            <p></p>
+            <h1 align='center'>Analytics</h1>
+            <h3 align='center'>Za Vas svakodnevno vršimo analizu zahtjeva i incidenata. U nastavku možete pogledati koliko procenata requesta i incidenata se nalaze u kojem stanju </h3>
                 <div className="flex-column">
                     <div>
-                        <Header>Requests</Header>
-                    <Bar 
+                        <Header><h1>Requests</h1></Header>
+                    <Bar
                         data={this.state.dataRequests}
-                        width={500}
-                        height={300}
+                        width={250}
+                        height={150}
+                        align='center'
                         options={{ maintainAspectRatio: false }}
                     />
                     </div>
                     <div>
-                    <Header>Incidents</Header>
-                     <Bar 
+                    <Header><h1>Incidents</h1></Header>
+                     <Bar
                         data={this.state.dataIncidents}
-                        width={500}
-                        height={300}
+                        width={250}
+                        height={150}
                         options={{ maintainAspectRatio: false }}
                     />
                     </div>
                 </div>
             </div>
+
+
+
+
+
+
         );
     }
 }
