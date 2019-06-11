@@ -34,8 +34,8 @@ export default class DetailedRequest extends Component {
 
               <div class="left floated left aligned column">
                   <h1 class="naslov"> {item.title}</h1>
-                  <h3>Type: Request</h3>
-                  <span class="time">{item.date}</span>
+                  <h2>Type: Request</h2>
+                  <span class="time"><h3>{item.date}</h3></span>
               </div>
             </div>
 
