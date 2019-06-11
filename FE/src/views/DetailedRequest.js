@@ -90,6 +90,7 @@ export default class DetailedRequest extends Component {
                       <div class="column"></div>
 
                       <div class="left floated left aligned column">
+                      <p></p>
                           <span class="time">{item.date}</span>
                       </div>
                     </div>
@@ -101,38 +102,38 @@ export default class DetailedRequest extends Component {
                           <p></p>
                               <div role="listitem" class="item">
                               <i aria-hidden="true" class="users icon"></i>
-                                <div class="content">{item.department}</div>
+                                <div class="content"><h4>{item.department}</h4></div>
                               </div>  <p></p>
                               <div role="listitem" class="item">
                               <i aria-hidden="true" class="user icon"></i>
-                                <div class="content">{item.creator}</div>
+                                <div class="content"><h4>{item.creator}</h4></div>
                               </div>
                           </div>
                     </div>
                     <div class="right floated right aligned column">
                     <p></p>
-                            <h4 class="meta">Assigned to:</h4>
-                            <h4 class="meta">Created by:</h4><br></br>
+                            <h3 class="meta">Assigned to:</h3>
+                            <h3 class="meta">Created by:</h3><br></br>
                         </div>
                         <div class="column">
                         <p></p>
-                        <h5>By application </h5>
-                        <h5>Telephone </h5>
+                        <h3>By application </h3>
+                        <h3>Telephone </h3>
                         </div>
                       <div class="right floated right aligned column">
                       <p></p>
-                      <h5>Report method: </h5>
-                      <h5>Contact method: </h5>
+                      <h3>Report method: </h3>
+                      <h3>Contact method: </h3>
                       </div>
                       <div class="column">
-                        <h5>{item.priority} </h5>
-                        <h5>{item.urgency} </h5>
-                        <h5>{item.status} </h5>
+                        <h3>{item.priority} </h3>
+                        <h3>{item.urgency} </h3>
+                        <h3>{item.status} </h3>
                       </div>
                       <div class="right floated right aligned column">
-                          <h5>Priority: </h5>
-                          <h5>Urgency: </h5>
-                          <h5>Status: </h5>
+                          <h3>Priority: </h3>
+                          <h3>Urgency: </h3>
+                          <h3>Status: </h3>
                       </div>
                 </div>
                     <div class="row">
@@ -141,13 +142,13 @@ export default class DetailedRequest extends Component {
                       <div class="column">
 
                       <br></br>
-                      <h4>Detailed Description </h4>
+                      <h2>Detailed Description </h2>
                       </div>
                       <div class="column"></div>
                       <div class="column"></div>
                       <div class="right floated right aligned column">
                       <br></br>
-                            <h4>History </h4>
+                            <h2>History </h2>
                       </div>
                     </div>
 
@@ -160,7 +161,7 @@ export default class DetailedRequest extends Component {
 
                           <div class="content">
                             <a class="author">Admin</a>
-                            <div class="metadata"><div>2 days ago</div></div>
+                            <div class="metadata"><h5>2 days ago</h5></div>
                             <div class="text">Assigned to IT department!</div>
                           </div>
 
