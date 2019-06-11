@@ -25,8 +25,6 @@ export default class DetailedRequest extends Component {
 <div>
 {this.state.requests.map(item => (
     <div class="ui computer reversed equal width grid" key={item}>
-
-
             <div class="row">
               <div class="column"></div>
               <div class="column"></div>
@@ -36,7 +34,7 @@ export default class DetailedRequest extends Component {
 
               <div class="left floated left aligned column">
                   <h1 class="naslov"> {item.title}</h1>
-                                    <h3>Type: Request</h3>
+                  <h3>Type: Request</h3>
                   <span class="time">{item.date}</span>
               </div>
             </div>
@@ -58,16 +56,8 @@ export default class DetailedRequest extends Component {
                       </div>
                   </div>
             </div>
-            <div class="column">
 
-            </div>
-            <div class="column">
-              <h5>High </h5>
-              <h5>Medium </h5>
-              <h5>Created </h5>
-              <h5>By application </h5>
-              <h5>Telephone </h5>
-            </div>
+
             <div class="right floated right aligned column">
             <p></p>
                     <h4 class="meta">Assigned to:</h4>
@@ -97,13 +87,13 @@ export default class DetailedRequest extends Component {
 
 
             <div class="row">
-              <div class="column"></div>
-                <div class="column"></div>
               <div class="column">
+              </div>
+              <div class="column">
+
               <br></br>
               <h4>Detailed Description </h4>
               </div>
-              <div class="column"></div>
               <div class="column"></div>
               <div class="column"></div>
               <div class="right floated right aligned column">
@@ -111,6 +101,8 @@ export default class DetailedRequest extends Component {
                     <h4>Comments </h4>
               </div>
             </div>
+
+
             <div class="row">
               <div class="column">{item.description}</div>
               <div class="column">
