@@ -123,8 +123,9 @@ export default class DetailedRequest extends Component {
       var item = this.state.requests[this.state.id];
         return(
         <div>
-            <div>
-            <p></p>
+
+
+
             <h1 class="naslov"> {item.title}</h1>
             <h3>Type: Request</h3>
 

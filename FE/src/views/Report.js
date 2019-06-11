@@ -57,13 +57,13 @@ export default class Report extends Component {
             <h1 align="center"> Form for creating new request/incident</h1>
             <br></br>
                 <Form className="report-form">
-                    <Header className="accent-color">Request/Incident</Header>
+                    <Header className="accent-color"></Header>
                         <Form.Field required={true}>
-                            <label className="">Title:</label>
+                            <label className="polje"><p className="polje">Title</p></label>
                             <input type="text" value={title} onChange={this.handleTitleChange}></input>
                         </Form.Field>
                         <Form.Field required={true}>
-                            <label className="empty-color">Categorty</label>
+                            <label className="polje"><p className="polje">Categorty</p></label>
                             <Form.Select
                                 value={categorty}
                                 onChange={this.handleCategoryChange}
@@ -72,26 +72,26 @@ export default class Report extends Component {
                             </Form.Select>
                         </Form.Field>
                         <Form.Field required={true}>
-                            <label className="empty-color">Description:</label>
+                            <label className="polje">Description:</label>
                             <textarea className="description" rows="10" value={description} onChange={this.handleDescriptionChange}></textarea>
                         </Form.Field>
                         <Form.Field required={true}>
-                            <label className="empty-color">Type:</label>
+                            <label className=""><p class="polje">Type:</p></label>
                             <Form.Radio
-                                label={() => <label className="empty-color">Request</label>}
+                                label={() => <label className="">Request</label>}
                                 value='req'
                                 checked={type === 'req'}
                                 onChange={this.handleTypeChange}
 
                             />
                             <Form.Radio
-                                label={() => <label className="empty-color">Incident</label>}
+                                label={() => <label className="">Incident</label>}
                                 value='inc'
                                 checked={type === 'inc'}
                                 onChange={this.handleTypeChange}
                             />
                             <Form.Radio
-                                label={() => <label className="empty-color">Not Sure</label>}
+                                label={() => <label className="">Not Sure</label>}
                                 value='nots'
                                 disabled={activeView !== userTypes.USER}
                                 checked={type === 'nots'}
